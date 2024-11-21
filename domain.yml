@@ -2,12 +2,173 @@ version: "3.1"
 
 intents:
   - einführung
+  - bedankung
+  - verabschiedung
   - fes_definition
+  - fes_kontakt
+  - fes_standort
+  - abfallentsorgung_müllabholungstermin
+  - abfallentsorgung_verpasste_müllabholung
+  - abfallentsorgung_schadstoff
 
 responses:
   utter_einführung:
   - text: "Hallo und willkommen! Ich bin dein digitaler Assistent für die Mülltrennung in Frankfurt am Main. Frag mich einfach nach Informationen zu FES-Abfallentsorgungsterminen, den Inhalten der verschiedenen Tonnen oder zu speziellen Entsorgungen wie Schadstoffsammlung, Sperrmüll oder Wertstoffhöfen."
 
+  utter_bedankung:
+  - text: "Freut mich, dass ich helfen konnte! Bei weiteren Fragen zur Mülltrennung Freut mich, dass ich helfen konnte! Bei weiteren Fragen zur Mülltrennung oder speziellen Entsorgungen in Frankfurt stehe ich dir jederzeit zur Seite."
+  
+  utter_verabschiedung:
+  - text: "Tschüss und danke, dass du zur Mülltrennung beiträgst!"
+
   utter_fes_definition:
   - text: "Die FES ist die Frankfurter Entsorgungs- und Service GmbH. Sie ist das Unternehmen, das für die Abfallentsorgung, Straßenreinigung und weitere Dienstleistungen rund um Entsorgung und Recycling in Frankfurt am Main zuständig ist. Neben der regelmäßigen Müllabholung bietet die FES auch spezielle Services wie Sperrmüllabholung, Schadstoffsammlungen und die Betreuung von Wertstoffhöfen an."
 
+  utter_fes_kontakt:
+  - text: "Die FES Frankfurter Entsorgungs- und Service GmbH erreichst du über folgende Kontaktdaten
+          - Telefonnummer: 0800 2008007-0 (Mo-Fr von 8:00 bis 18:00 Uhr)
+          - E-Mail: services@fes-frankfurt.de
+          - Adresse: Weidenbornstraße 40, 60389 Frankfurt am Main
+          - Website: https://www.fes-frankfurt.de/"
+
+  utter_fes_standort:
+  - text: "Die FES Frankfurter Entsorgungs- und Service GmbH hat ihren Hauptsitz in der Weidenbornstraße 40, 60389 Frankfurt am Main. Dort findest du auch das Kundenzentrum, wo du persönliche Anliegen klären kannst. Die FES hat viele weitere Orte für verschiedene Zwecke."
+
+  utter_abfallentsorgung_müllabholungstermin:
+  - text: "Im Abfallkalender unter https://www.fes-frankfurt.de/services/abfallkalender kannst du ganz einfach die Abholzeiten für deinen Müll herausfinden. Wähle deine Adresse aus, und du siehst alle relevanten Abholtermine. Die Daten lassen sich zusätzlich als PDF speichern, per Mail senden oder als Kalendereintrag exportieren."
+
+  utter_abfallentsorgung_verpasste_müllabholung:
+  - text: "Falls deine Müllabholung verpasst wurde, kannst du den Vorfall bei der FES melden – online, telefonisch oder über die FES-App. Der Abfall wird dann meist zeitnah nachgeholt. Bitte lass die Tonne weiterhin zugänglich stehen."
+
+  utter_abfallentsorgung_schadstoff:
+  - text: "Nutze das Schadstoffmobil für eine sichere und fachgerechte Entsorgung der Sonderabfälle und Schadstoffe. Das Schadstoffmobil macht als mobile Sammelstelle regelmäßig an festen Orten in Frankfurt am Main halt (Online-Terminübersicht: https://www.fes-frankfurt.de/services/schadstoffsammlung). Bitte beachten Sie folgende Hinweise bei der Schadstoffannahme:
+          - Nur haushaltsübliche Sonderabfälle von in Frankfurt gemeldeten Privatpersonen und Kleingewerbetreibenden werden angenommen
+          - Liefere die Schadstoffe nach Arten getrennt und möglichst in Originalverpackung im Schadstoffmobil ab
+          - Die Behältnisse müssen dicht geschlossen sein
+          - Die Abgabemenge ist auf maximal 100kg/100l Gesamtaußenvolumen pro Tag begrenzt
+          - Übergebe die Schadstoffabfälle direkt dem Fachpersonal im FES-Schadstoffmobil und stelle sie auf keinen Fall anonym ab
+          Von der Sammlung ausgeschlossen sind:
+          - Infektiöse Abfälle 
+          - Explosive Abfälle
+          - Radioaktive Abfälle
+          - Elektro- und Haushaltsgeräte
+          - Autoreifen und Gasflaschen"
+
+  utter_abfallentsorgung_sperrmüll:
+  - text: "Der Sperrmüllservice bietet Haushalten eine Möglichkeit, große und sperrige Gegenstände wie Möbel, Matratzen oder Teppiche, die nicht in den normalen Hausmüll passen, entsorgen zu lassen durch eine Terminvereinbarung. Das wird entsorgt:
+          - Alte Möbel
+          - Elektrogeräte ab einer Kantenlänge von ca. 40 cm
+          - Teppichböden und Laminat in haushaltsüblichen Mengen
+          - Alle sperrigen Gegenstände, die bei einem Umzug relevant sind
+          Das wird nicht entsorgt:
+          - Einbauten wie Fenster und Türen
+          - Sanitäre Einrichtungen
+          - Kleinabfälle mit oder ohne Tüte/Behältnis
+          - Schadstoffe wie Lacke, Farben, Sprays, Batterien oder auch Energiesparlampen/Leuchtstoffröhren 
+          - Gewerbetypische Abfälle, Autoreifen
+          Beachte, dass zwischen Terminvergabe und Abholservice ca. 10 Arbeitstage liegen können, Terminvereinbarung erfolgt über:
+          - Internet: unter www.fes-frankfurt.de den Sperrmüllservice anmelden
+          - Telefon: über 0800 2008007-10 rund um die Uhr erreichbar für Sperrmüllanmeldung
+          - Servicecenter: persönlich besprechen in Liebfrauenberg 52-54"
+
+  utter_abfallentsorgung_wertstoffhof:
+  - text: "Der Wertstoffhof ist eine Sammelstelle, an der die Bürger verschiedene Abfälle und Wertstoffe abgeben können, die nicht in den normalen Hausmüll gehören. Die FES übernimmt die schnelle und umweltgerechte Entsorgung. Es können u.a. entsorgt werden:
+          - Sperrmüll
+          - Metall
+          - Hartplastik
+          - Verpackungen
+          - Altpapier/Pappe
+          - Grünschnitt
+          - Holz (unbehandelt)
+          - Elektrogroß- und -kleingeräte
+          - Energiesparlampen/Batterien
+          - CDs, DVDs
+          - Korken
+          - Altkleider
+          In Frankfurt gibt es 4 Wertstoffhöfe:
+          - FES-Wertstoffhof Nord
+                  □ Adresse: Max-Holder-Straße 29 (Kalbach-Riedberg)
+                  □ Sommeröffnungszeiten: (01.04. – 30.09.): Mo.–Sa. 8.00–17.00 Uhr
+            □ Winteröffnungszeiten: (01.10. – 31.03.): Mo.–Sa. 10.00–16.00 Uhr
+          - FES-Wertstoffhof Ost
+            □ Adresse: Weidenbornstraße 40/Einfahrt Comeniusstraße (Bornheim)
+            □ Öffnungszeiten: Mo.–Sa. 8.00–14.30 Uhr
+          - FES-Wertstoffhof Süd
+            □ Adresse: Seehofstraße 48 (Sachsenhausen)
+            □ Öffnungszeiten: Mo.–Sa. 8.00–14.30 Uhr
+          - FES-Wertstoffhof West
+            □ Adresse: Breuerwiesenstraße 2 (Höchst)
+            □ Sommeröffnungszeiten (01.04. – 30.09.): Mo.–Sa. 8.00–17.00 Uhr
+                  □ Winteröffnungszeiten (01.10. – 31.03.): Mo.–Sa. 10.00–16.00 Uhr"
+                
+  utter_mülltrennung_altpapier:
+  - text: "Die Altpapiertonne hat einen grünen Deckel mit einem grau/schwarzen Korpus. Hierin gehören Papier und Pappe ohne Beschichtung und unbeschmutzt, sowie:
+          - Pappen und Kartonagen
+          - Zeitungen, Illustrierte, Kataloge
+          - Bücher und Hefte
+          Nicht in die Altpapiertonne kommt:
+          - Stark verschmutztes Papier (Restmüll)
+          - Beschichtetes Papier (Restmüll)
+          - Pergament- und Hygienepapiere, Windeln (Restmüll)"
+
+  utter_mülltrennung_biomüll:
+  - text: "Die Biotonne hat einen braunen Deckel mit einem grau/schwarzen Korpus.  Feuchte Biofälle wie Salat- oder Obst- und Gemüsereste können Sie in Zeitungs- oder Küchenpapier wickeln, um die Tonne vor starker Verschmutzung und Geruch zu schützen. Darin gehören alle biologisch abbaubaren Abfälle aus privaten Haushalten:
+          - Obst- und Gemüseabfälle (auch Zitrusfrüchte, Bananen- und Nussschalen)
+          - Rohe und gekochte Speise- und Lebensmittelreste
+          - Kaffee- und Teesatz, Filtertüten, Eierschalen
+          - Grünschnitt und Laub
+          Nicht in die Biotonne kommt:
+          - Plastiktüten, Verpackungen aus Kunststoff und Metall (gelbe Verpackungstonne)
+          - Kehricht und Staubsaugerbeutel (Restmüll)
+          - Zigarettenkippen (Restmüll)
+          - Windeln und andere gebrauchte Hygieneartikel (Restmüll)"
+
+  utter_mülltrennung_verpackung:
+  - text: "Die Altpapiertonne hat einen gelben Deckel mit einem grau/schwarzen Korpus. Hierin gehören alle Verpackungen mit oder ohne Symbol wie den grünen Punkt, die nicht ausschließlich aus Papier, Pappe oder Glas bestehen. Die Verpackungen müssen nicht gespült aber leer sein. Dazu gehören:
+          - Verpackungen aus Kunststoff wie Folien, Becher und Styropor
+          - Verbundverpackungen aus Materialmix (z.B. Alu + Papier) wie Getränkekartons und Milchtüten
+          - Verpackungen aus Metall wie Konserven- und Getränkedosen
+          - Geschäumte Kunststoffe, z.B. Obst- und Gemüseverpackungen
+          Nicht in die Verpackungstonne kommt:
+          - Verpackungen aus Papier und Pappe (Altpapiertonne)
+          - Verpackungen aus Glas (Altglascontainer)
+          - Stark verschmutze Fast-Food-Verpackungen wie Pizzakartons (Restmüll)"
+
+  utter_mülltrennung_restmüll:
+  - text: "Die Restmülltonne hat einen grau/schwarzen Deckel und Korpus. Hierin gehören alle Abfälle, die aufgrund von Verunreinigung oder Vermischung in keine der anderen 3 Tonnen entsorgt werden können:
+          - Hygieneartikel (z.B. Taschentücher, Damenbinden, Wattebäusche)
+          - Windeln
+          - Staub, Asche, Kehricht
+          - Zigarettenkippen
+          - Küchentücher, Putzlappen
+          - Staubsaugerbeutel
+          - Kleintierstreu
+          - Trinkgläser, Porzellan, Keramik, alle Scherben
+          Nicht in die Restmülltonne kommt:
+          - Elektrogeräte/Schrott (Kleingeräte: Wertstoffhöfe, Großgeräte: Sperrmüll)
+          - Batterien (spezielle Sammelbehälter in Supermärkten und öffentlichen Gebäuden)
+          - Sonderabfall/Schadstoffe wie Farben, Lacke Sprays etc. (Schadstoffmobil)
+          - Verpackung jeglicher Art
+          - Bauschutt
+          - Essensreste"
+
+  utter_mülltrennung_altglascontainer:
+  - text: "Die blauen Altglascontainer stehen im gesamten Stadtgebiet an zentralen, gut erreichbaren Plätzen und werden in der Regel alle 14 Tage geleert. Bitte nehmen Sie Rücksicht auf Ihre Mitbürgerinnen und Mitbürger und werfen das Altglas nur an Werktagen von 7.00 - 20.00 Uhr ein. In den Altglascontainer gehören gebrauchte Glasverpackungen nach den Farben weiß, grün und braun getrennt, wobei blaues oder buntes Glas zum Grünglas gehört. Das Entfernen der Deckel ist nicht notwendig. Beispiele zu was darein gehört:
+          - Getränkeflaschen
+          - Ketchupflaschen
+          - Arzneimittelflaschen
+          - Deckelgläser wie Marmeladengläser
+          - Cremedosen
+          - Parfumflacons
+          Nicht in den Altglascontainer gehört:
+          - Flachglas wie Spiegel und Scheiben
+          - Trinkgläser und Blumenvasen
+          - Porzellan und Keramik
+          - Leuchtmittel jeglicher Art
+          - Stark verschmutzte Gläser"
+
+  utter_mülltrennung_funktionsweise:
+  - text: "In Frankfurt am Main ist die Mülltrennung darauf ausgelegt, Abfälle nach Materialien zu sortieren, um das Recycling zu fördern und die Umwelt zu schonen. Bürger trennen ihren Abfall in verschiedene Kategorien wie Restmüll, Papier, Bioabfälle und Wertstoffe, um die Wiederverwertung zu ermöglichen und den Anteil an Müll zu reduzieren, der verbrannt werden muss. Es gibt darüber hinaus spezielle Sammelstellen und Abholservices für größere oder gefährliche Abfälle wie Sperrmüll und Schadstoffe. Dieses System hilft dabei, wertvolle Rohstoffe zurückzugewinnen und die Umwelt zu entlasten. Informationen und Abholtermine werden von der FES, dem Entsorgungsunternehmen in Frankfurt, zur Verfügung gestellt."
+
+  utter_mülltrennung_wichtigkeit:
+    - text: "Mülltrennung ist entscheidend, um Ressourcen zu schonen und die Umweltbelastung zu reduzieren. Durch sorgfältige Trennung können wertvolle Materialien recycelt statt verbrannt werden, was CO₂-Emissionen mindert und Energie spart. Frankfurt kämpft mit hohen Restmüllmengen, die oft aus falsch entsorgtem Papier, Plastik und organischen Abfällen bestehen. Wenn wir alle besser trennen, unterstützen wir Frankfurt direkt auf dem Weg zur Zero Waste City!"

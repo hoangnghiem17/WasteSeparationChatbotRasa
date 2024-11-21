@@ -4,9 +4,9 @@ nlu:
 - intent: einführung
   examples: |
     - Wie kann ich diesen assistenten nutzen?
-    - hilfe
+    - Hilfe
     - Welche informationen kannst du mir geben?
-    - was kannst du?
+    - Was kannst du?
     - Wie kann ich diesen chatbot nutzen?
     - Guten Abend
     - Guten Nachmittag
@@ -15,6 +15,30 @@ nlu:
     - Hey
     - Hi
 
+- intent: bedankung
+  examples: |
+    - Top
+    - Alles klar
+    - Besten Dank
+    - Danke dir
+    - Das ist sehr hilfreich, danke
+    - Super, danke
+    - Dankeschön
+    - Vielen Dank
+    - Danke
+
+- intent: verabschiedung
+  examples: |
+    - Bye
+    - Auf Wiedersehen
+    - Bis dann
+    - Ciao
+    - Mach's gut
+    - Bis bald
+    - Bis später
+    - Auf Wiedersehen
+    - Tschüss
+
 - intent: fes_definition
   examples: |
     - Kannst du mir mehr über die FES erzählen?
@@ -22,3 +46,107 @@ nlu:
     - Wer ist die FES?
     - Was ist die FES?
     - Was macht die FES?
+
+- intent: fes_kontakt
+  examples: |
+    - Wie erreiche ich die FES?
+    - Was sind die Kontaktdaten der FES?
+    - Was ist die E-Mail-Adresse der FES?
+    - Was ist die Telefonnummer der FES?
+    - Wie kann ich die FES kontaktieren?
+
+- intent: fes_standort
+  examples: |
+    - Welche Standorte hat die FES?
+    - Wie komme ich zur FES in Frankfurt?
+    - Was ist die Adresse für die FES?
+    - Wo befindet sich die FES?
+
+- intent: abfallentsorgung_müllabholungstermin
+  examples: |
+    - Wann werden die Mülltonnen geleert?
+    - Wann ist die nächste Müllabholung?
+    - An welchen Tagen wird der Müll abgeholt?
+    - Wann wird der Müll bei mir abgeholt?
+
+- intent: abfallentsorgung_verpasste_müllabholung
+  examples: |
+    - Was passiert, wenn der Müll nicht abgeholt wurde?
+    - Was kann ich machen bei einer verpassten Müllabholung?
+    - Was passiert bei einer verpassten Müllabholung?
+
+- intent: abfallentsorgung_schadstoff
+  examples: |
+    - Was mache ich mit Sondermüll wie Lacken oder Lösungsmitteln?
+    - Wo kann ich alte Batterien oder Schadstoffe abgeben?
+    - Wie entsorge ich Chemikalien oder Farben richtig?
+    - Wie entsorge ich Schadstoffe?
+    - Wo kann ich Schadstoffe entsorgen?
+
+- intent: abfallentsorgung_sperrmüll
+  examples: |
+    - Welche Gegenstände kann ich als Sperrmüll abholen lassen?
+    - Was ist der Sperrmüllservice?
+    - Was gehört in den Sperrmüll?
+    - Was kann ich über den Sperrmüll entsorgen?
+    - Was zählt zum Sperrmüll?
+
+- intent: abfallentsorgung_wertstoffhof
+  examples: |
+    - Wie funktioniert die Entsorgung im Wertstoffhof?
+    - Was kann ich beim Wertstoffhof entsorgen?
+    - Welche Wertstoffhöfe gibt es in Frankfurt?
+    - Wann ist der Wertstoffhof geöffnet?
+    - Wo ist der Wertstoffhof in Frankfurt?
+
+- intent: mülltrennung_altpapier
+  examples: |
+    - Was kommt in die grüne Tonne?
+    - Was gehört in die Altpapiertonne?
+    - Welche Abfälle gehören in die grüne Tonne?
+    - Was kann ich in die Altpapiertonne werfen?
+
+- intent: mülltrennung_biomüll
+  examples: |
+    - Was kommt in die braune Tonne?
+    - Was gehört in die Biotonne?
+    - Welche Abfälle gehören in die braune Tonne?
+    - Was kann ich in die Biotonne werfen?
+
+- intent: mülltrennung_verpackung
+  examples: |
+    - Was kommt in die gelbe Tonne?
+    - Was gehört in die Verpackungstonne?
+    - Welche Abfälle gehören in die gelbe Tonne?
+    - Was kann ich in die Verpackungstonne werfen?
+
+- intent: mülltrennung_restmüll
+  examples: |
+    - Was kann ich in den Restmüll werfen?
+    - Welche Abfälle gehören in die schwarze Tonne?
+    - Was gehört in die Restmülltonne?
+    - Was kommt in die schwarze Tonne?
+
+- intent: mülltrennung_glascontainer
+  examples: |
+    - Welche Glasarten gehören in den Glascontainer?
+    - Was kann man im Glascontainer entsorgen?
+    - Welche Art von Glas kommt in den Glascontainer?
+    - Was kommt in den Glascontainer?
+
+- intent: mülltrennung_funktionsweise
+  examples: |
+    - Wie wird der Müll in Frankfurt getrennt?
+    - Was sind die Grundlagen der Mülltrennung in Frankfurt?
+    - Wie ist das System der Mülltrennung in Frankfurt organisiert?
+    - Kannst du mir erklären, wie die Mülltrennung in Frankfurt abläuft?
+    - Wie funktioniert die Mülltrennung in Frankfurt?
+
+- intent: mülltrennung_wichtigkeit
+  examples: |
+    - Warum wird in Frankfurt Wert auf Mülltrennung gelegt?
+    - Wie trägt die Mülltrennung zur Nachhaltigkeit in Frankfurt bei?
+    - Welche Vorteile hat es, Müll zu trennen?
+    - Warum sollte man Müll trennen?
+    - Was bringt die Mülltrennung für die Umwelt?
+    - Warum ist die Mülltrennung in Frankfurt wichtig?

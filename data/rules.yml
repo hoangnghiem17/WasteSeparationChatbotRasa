@@ -7,7 +7,84 @@ rules:
   - intent: einführung
   - action: utter_einführung
 
+- rule: Bedankung
+  steps:
+  - intent: bedankung
+  - action: utter_bedankung
+
+- rule: Verabschiedung
+  steps:
+  - intent: verabschiedung
+  - action: utter_verabschiedung
+
 - rule: Beschreibe was die FES macht
   steps:
   - intent: fes_definition
   - action: utter_fes_definition
+
+- rule: Kontaktdaten der FES
+  steps:
+  - intent: fes_kontakt
+  - action: utter_fes_kontakt
+
+- rule: Standorte der FES
+  steps:
+  - intent: fes_standort
+  - action: utter_fes_standort
+
+- rule: Infos zur Müllabholung 
+  steps:
+  - intent: abfallentsorgung_müllabholungstermin
+  - action: utter_abfallentsorgung_müllabholungstermin
+
+- rule: Infos zur Schadstoffentsorgung 
+  steps:
+  - intent: abfallentsorgung_schadstoff
+  - action: utter_abfallentsorgung_schadstoff
+
+- rule: Infos zum Sperrmüll
+  steps:
+  - intent: abfallentsorgung_sperrmüll
+  - action: utter_abfallentsorgung_sperrmüll
+
+- rule: Infos zum Wertstoffhof
+  steps:
+  - intent: abfallentsorgung_wertstoffhof
+  - action: utter_abfallentsorgung_wertstoffhof
+
+- rule: Infos zum Recycling von Altpapier
+  steps:
+  - intent: mülltrennung_altpapier
+  - action: utter_mülltrennung_altpapier
+
+- rule: Infos zum Recycling von Biomüll
+  steps:
+  - intent: mülltrennung_biomüll
+  - action: utter_mülltrennung_biomüll
+
+- rule: Infos zum Recycling von Verpackung
+  steps:
+  - intent: mülltrennung_verpackung
+  - action: utter_mülltrennung_verpackung
+
+- rule: Infos zum Recycling von Restmüll
+  steps:
+  - intent: mülltrennung_restmüll
+  - action: utter_mülltrennung_restmüll
+
+- rule: Infos zum Altglascontainer
+  steps:
+  - intent: mülltrennung_altglascontainer
+  - action: utter_mülltrennung_altglascontainer
+
+- rule: Funktionsweise Mülltrennung in Frankfurt
+  steps:
+  - intent: mülltrennung_funktionsweise
+  - action: utter_mülltrennung_funktionsweise
+
+- rule: Wichtigkeit Mülltrennung
+  steps:
+  - intent: mülltrennung_wichtigkeit
+  - action: utter_mülltrennung_wichtigkeit
+
+
