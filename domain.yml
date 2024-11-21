@@ -1,34 +1,13 @@
 version: "3.1"
 
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - einführung
+  - fes_definition
 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
+  utter_einführung:
+  - text: "Hallo und willkommen! Ich bin dein digitaler Assistent für die Mülltrennung in Frankfurt am Main. Frag mich einfach nach Informationen zu FES-Abfallentsorgungsterminen, den Inhalten der verschiedenen Tonnen oder zu speziellen Entsorgungen wie Schadstoffsammlung, Sperrmüll oder Wertstoffhöfen."
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_fes_definition:
+  - text: "Die FES ist die Frankfurter Entsorgungs- und Service GmbH. Sie ist das Unternehmen, das für die Abfallentsorgung, Straßenreinigung und weitere Dienstleistungen rund um Entsorgung und Recycling in Frankfurt am Main zuständig ist. Neben der regelmäßigen Müllabholung bietet die FES auch spezielle Services wie Sperrmüllabholung, Schadstoffsammlungen und die Betreuung von Wertstoffhöfen an."
 
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true

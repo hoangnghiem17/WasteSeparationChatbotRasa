@@ -2,12 +2,12 @@ version: "3.1"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Gebe ein Einführung über den Chatbot
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - intent: einführung
+  - action: utter_einführung
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Beschreibe was die FES macht
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - intent: fes_definition
+  - action: utter_fes_definition
