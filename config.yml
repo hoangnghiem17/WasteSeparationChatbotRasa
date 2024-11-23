@@ -10,41 +10,29 @@ assistant_id: 20241121-143739-crunchy-plasma
 # https://rasa.com/docs/rasa/nlu/components/
 language: de
 
-pipeline: null
+# Processing and analyzing user messages to determine their intent and extract entities
+pipeline: 
 # # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
 # # If you'd like to customize it, uncomment and adjust the pipeline.
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
-#   - name: WhitespaceTokenizer
-#   - name: RegexFeaturizer
-#   - name: LexicalSyntacticFeaturizer
-#   - name: CountVectorsFeaturizer
-#   - name: CountVectorsFeaturizer
-#     analyzer: char_wb
-#     min_ngram: 1
-#     max_ngram: 4
-#   - name: DIETClassifier
-#     epochs: 100
-#     constrain_similarities: true
-#   - name: EntitySynonymMapper
-#   - name: ResponseSelector
-#     epochs: 100
-#     constrain_similarities: true
-#   - name: FallbackClassifier
-#     threshold: 0.3
-#     ambiguity_threshold: 0.1
+- name: WhitespaceTokenizer # splits input text into tokens based on white space
+- name: CountVectorsFeaturizer # converts tokens into numerical vectors using bag-of-words approach
+- name: DIETClassifier # multi-task model for intent classification and entity recognition
+  epochs: 100 # number of training cycles
+  constrain_similarities: True # ensure intent similarities are constrained during training to prevent overly confident predictions
+- name: FallbackClassifier
+  threshold: 0.6  # Threshold for NLU fallback
+  ambiguity_threshold: 0.1 # If multiple intents have similar confidence scores within 0.1, the fallback intent is triggered
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
-policies: null
+
+# Manages dialogue flow, defining how bot responds based on intents identified by NLU pipeline
+policies: 
 # # No configuration for policies was provided. The following default policies were used to train your model.
 # # If you'd like to customize them, uncomment and adjust the policies.
 # # See https://rasa.com/docs/rasa/policies for more information.
-#   - name: MemoizationPolicy
-#   - name: RulePolicy
-#   - name: UnexpecTEDIntentPolicy
-#     max_history: 5
-#     epochs: 100
-#   - name: TEDPolicy
-#     max_history: 5
-#     epochs: 100
-#     constrain_similarities: true
+- name: RulePolicy # manages fixed conversational rules and fallback behavior
+core_fallback_action_name: "action_default_fallback" # action to take when fallback triggered, default Rasa
+core_fallback_threshold: 0.3 # threshold for core fallback, when dialogue confidence score is below this value
+enable_fallback_prediction: True # fallback prediction where dialogue management cannot confidently decide next action
