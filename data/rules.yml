@@ -7,7 +7,7 @@ rules:
     - intent: nlu_fallback
     - action: utter_fallback
 
-- rule: Gebe ein Einführung über den Chatbot
+- rule: Einführung Chatbot
   steps:
   - intent: einführung
   - action: utter_einführung
@@ -27,12 +27,12 @@ rules:
   - intent: fes_definition
   - action: utter_fes_definition
 
-- rule: Kontaktdaten der FES
+- rule: Kontaktdaten FES
   steps:
   - intent: fes_kontakt
   - action: utter_fes_kontakt
 
-- rule: Standorte der FES
+- rule: Standorte FES
   steps:
   - intent: fes_standort
   - action: utter_fes_standort

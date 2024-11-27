@@ -20,6 +20,13 @@ intents:
   - mülltrennung_wichtigkeit
 
 
+entities:
+  - unternehmen
+  - kontakt
+  - standort
+  - abfallart
+
+
 responses:
   utter_fallback:
   - text: "Tut mir leid, ich bin mir nicht sicher, was du meinst. Frag mich gerne zu Themen rund um Mülltrennung und Recycling!"

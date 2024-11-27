@@ -1,14 +1,42 @@
 version: "3.1"
 
 nlu:
+- synonym: altpapiertonne
+  examples: |
+    - grüne Tonne
+    - Altpapiertonne
+    - Altpapiermülltonne
+    - Papiertonne
+    - Papiermülltonne
+
+- synonym: biotonne
+  examples: |
+    - braune Tonne
+    - Biotonne
+    - Biomülltonne
+    - Ökotonne
+    - Komposttonne
+
+- synonym: verpackungstonne
+  examples: |
+    - gelbe Tonne
+    - Verpackungstonne
+    - Verpackungsmülltonne
+    - Leichtverpackungstonne
+    - LVP-Tonne
+
+- synonym: restmülltonne
+  examples: |
+    - schwarze Tonne
+    - Restmülltonne
 
 - intent: einführung
   examples: |
-    - Wie kann ich diesen assistenten nutzen?
+    - Wie kann ich diesen Assistenten nutzen?
     - Hilfe
-    - Welche informationen kannst du mir geben?
+    - Welche Informationen kannst du mir geben?
     - Was kannst du?
-    - Wie kann ich diesen chatbot nutzen?
+    - Wie kann ich diesen Chatbot nutzen?
     - Guten Abend
     - Guten Nachmittag
     - Guten Morgen
@@ -22,8 +50,8 @@ nlu:
     - Alles klar
     - Besten Dank
     - Danke dir
-    - Das ist sehr hilfreich, danke
-    - Super, danke
+    - Das ist sehr hilfreich, Danke
+    - Super, Danke
     - Dankeschön
     - Vielen Dank
     - Danke
@@ -42,26 +70,26 @@ nlu:
 
 - intent: fes_definition
   examples: |
-    - Kannst du mir mehr über die FES erzählen?
-    - Was bietet die FES für Dienstleistungen an?
-    - Wer ist die FES?
-    - Was ist die FES?
-    - Was macht die FES?
+    - Kannst du mir mehr über die [FES](unternehmen) erzählen?
+    - Was bietet die [FES](unternehmen) für Dienstleistungen an?
+    - Wer ist die [FES](unternehmen)?
+    - Was ist die [FES](unternehmen)?
+    - Was macht die [FES](unternehmen)?
 
 - intent: fes_kontakt
   examples: |
-    - Wie erreiche ich die FES?
-    - Was sind die Kontaktdaten der FES?
-    - Was ist die E-Mail-Adresse der FES?
-    - Was ist die Telefonnummer der FES?
-    - Wie kann ich die FES kontaktieren?
+    - Wie erreiche ich die [FES](unternehmen)?
+    - Was sind die [Kontaktdaten](kontakt) der [FES](unternehmen)?
+    - Was ist die [E-Mail-Adresse](kontakt) der [FES](unternehmen)?
+    - Was ist die [Telefonnummer](kontakt) der [FES](unternehmen)?
+    - Wie kann ich die [FES](unternehmen) kontaktieren?
 
 - intent: fes_standort
   examples: |
-    - Welche Standorte hat die FES?
-    - Wie komme ich zur FES in Frankfurt?
-    - Was ist die Adresse für die FES?
-    - Wo befindet sich die FES?
+    - Welche [Standorte](standort) hat die [FES](unternehmen)?
+    - Wie komme ich zur [FES](unternehmen) in Frankfurt?
+    - Was ist die [Adresse](standort) der [FES](unternehmen)?
+    - Wo befindet sich die [FES](unternehmen)?
 
 - intent: abfallentsorgung_müllabholungstermin
   examples: |
@@ -78,62 +106,66 @@ nlu:
 
 - intent: abfallentsorgung_schadstoff
   examples: |
-    - Was mache ich mit Sondermüll wie Lacken oder Lösungsmitteln?
-    - Wo kann ich alte Batterien oder Schadstoffe abgeben?
+    - Was mache ich mit [Sondermüll](abfallart) wie Lacken oder Lösungsmitteln?
+    - Wo kann ich alte Batterien oder [Schadstoffe](abfallart) abgeben?
     - Wie entsorge ich Chemikalien oder Farben richtig?
-    - Wie entsorge ich Schadstoffe?
-    - Wo kann ich Schadstoffe entsorgen?
+    - Wie entsorge ich [Schadstoffe](abfallart)?
+    - Wo kann ich [Schadstoffe](abfallart) entsorgen?
 
 - intent: abfallentsorgung_sperrmüll
   examples: |
-    - Welche Gegenstände kann ich als Sperrmüll abholen lassen?
+    - Welche Gegenstände kann ich als [Sperrmüll](abfallart) abholen lassen?
     - Was ist der Sperrmüllservice?
-    - Was gehört in den Sperrmüll?
-    - Was kann ich über den Sperrmüll entsorgen?
-    - Was zählt zum Sperrmüll?
+    - Was gehört in den [Sperrmüll](abfallart)?
+    - Was kann ich über den [Sperrmüll](abfallart) entsorgen?
+    - Was zählt zum [Sperrmüll](abfallart)?
 
 - intent: abfallentsorgung_wertstoffhof
   examples: |
-    - Wie funktioniert die Entsorgung im Wertstoffhof?
-    - Was kann ich beim Wertstoffhof entsorgen?
-    - Welche Wertstoffhöfe gibt es in Frankfurt?
-    - Wann ist der Wertstoffhof geöffnet?
-    - Wo ist der Wertstoffhof in Frankfurt?
+    - Wie funktioniert die Entsorgung im [Wertstoffhof](abfallart)?
+    - Was kann ich beim [Wertstoffhof](abfallart) entsorgen?
+    - Welche [Wertstoffhöfe](abfallart) gibt es in Frankfurt?
+    - Wann ist der [Wertstoffhof](abfallart) geöffnet?
+    - Wo ist der [Wertstoffhof](abfallart) in Frankfurt?
 
 - intent: mülltrennung_altpapier
   examples: |
-    - Was kommt in die grüne Tonne?
-    - Was gehört in die Altpapiertonne?
-    - Welche Abfälle gehören in die grüne Tonne?
-    - Was kann ich in die Altpapiertonne werfen?
+    - Was kommt in die [grüne Tonne](abfallart:altpapiertonne)?
+    - Was gehört in die [Altpapiertonne](abfallart:altpapiertonne)?
+    - Welche Abfälle gehören in die [grüne Tonne](abfallart:altpapiertonne)?
+    - Was kann ich in die [Altpapiertonne](abfallart:altpapiertonne) werfen?
+    - Wo wird [Altpapiermüll](abfallart:altpapiertonne) entsorgt?
 
 - intent: mülltrennung_biomüll
   examples: |
-    - Was kommt in die braune Tonne?
-    - Was gehört in die Biotonne?
-    - Welche Abfälle gehören in die braune Tonne?
-    - Was kann ich in die Biotonne werfen?
+    - Was kommt in die [braune Tonne](abfallart:biotonne)?
+    - Was gehört in die [Biotonne](abfallart:biotonne)?
+    - Welche Abfälle gehören in die [braune Tonne](abfallart:biotonne)?
+    - Was kann ich in die [Biotonne](abfallart:biotonne) werfen?
+    - Wo wird [Biomüll](abfallart:biotonne) entsorgt?
 
 - intent: mülltrennung_verpackung
   examples: |
-    - Was kommt in die gelbe Tonne?
-    - Was gehört in die Verpackungstonne?
-    - Welche Abfälle gehören in die gelbe Tonne?
-    - Was kann ich in die Verpackungstonne werfen?
+    - Was kommt in die [gelbe Tonne](abfallart:verpackungstonne)?
+    - Was gehört in die [Verpackungstonne](abfallart:verpackungstonne)?
+    - Welche Abfälle gehören in die [gelbe Tonne](abfallart:verpackungstonne)?
+    - Was kann ich in die [Verpackungstonne](abfallart:verpackungstonne) werfen?
+    - Wo wird [Verpackungsmüll](abfallart:verpackungstonne) entsorgt?
 
 - intent: mülltrennung_restmüll
   examples: |
-    - Was kann ich in den Restmüll werfen?
-    - Welche Abfälle gehören in die schwarze Tonne?
-    - Was gehört in die Restmülltonne?
-    - Was kommt in die schwarze Tonne?
+    - Was kann ich in den [Restmüll](abfallart:restmülltonne) werfen?
+    - Welche Abfälle gehören in die [schwarze Tonne](abfallart:restmülltonne)?
+    - Was gehört in die [Restmülltonne](abfallart:restmülltonne)?
+    - Was kommt in die [schwarze Tonne](abfallart:restmülltonne)?
+    - Wo wird [Restmüll](abfallart:restmülltonne) entsorgt?
 
 - intent: mülltrennung_glascontainer
   examples: |
-    - Welche Glasarten gehören in den Glascontainer?
-    - Was kann man im Glascontainer entsorgen?
-    - Welche Art von Glas kommt in den Glascontainer?
-    - Was kommt in den Glascontainer?
+    - Welche Glasarten gehören in den [Glascontainer](abfallart)?
+    - Was kann man im [Glascontainer](abfallart) entsorgen?
+    - Welche Art von Glas kommt in den [Glascontainer](abfallart)?
+    - Was kommt in den [Glascontainer](abfallart)?
 
 - intent: mülltrennung_funktionsweise
   examples: |

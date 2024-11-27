@@ -6,17 +6,19 @@ recipe: default.v1
 # This default value must be replaced with a unique assistant name within your deployment
 assistant_id: 20241121-143739-crunchy-plasma
 
-# Configuration for Rasa NLU.
-# https://rasa.com/docs/rasa/nlu/components/
-language: de
-
+# Configuration for Rasa NLU: https://rasa.com/docs/rasa/nlu/components/
 # Processing and analyzing user messages to determine their intent and extract entities
+language: de
 pipeline: 
-# # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
-# # If you'd like to customize it, uncomment and adjust the pipeline.
-# # See https://rasa.com/docs/rasa/tuning-your-model for more information.
-- name: WhitespaceTokenizer # splits input text into tokens based on white space
-- name: CountVectorsFeaturizer # converts tokens into numerical vectors using bag-of-words approach
+# Use Spacykit for german language support for NLU steps
+- name: SpacyNLP
+  model: "de_core_news_md"
+- name: SpacyTokenizer # accurate tokenization for german
+- name: SpacyFeaturizer # utlize pre-trained word embeddings to enhance understanding of semantic similarities
+- name: CountVectorsFeaturizer # transforms text into numerical vectors with bag-of-words on character-level for improving recognition of misspelled words and variations
+  analyzer: "char_wb" # creates character n-grams only within word boundaries
+  min_ngram: 1 # min n-grams to be considered
+  max_ngram: 4 # max n-grams to be considered
 - name: DIETClassifier # multi-task model for intent classification and entity recognition
   epochs: 100 # number of training cycles
   constrain_similarities: True # ensure intent similarities are constrained during training to prevent overly confident predictions
@@ -24,15 +26,13 @@ pipeline:
   threshold: 0.6  # Threshold for NLU fallback
   ambiguity_threshold: 0.1 # If multiple intents have similar confidence scores within 0.1, the fallback intent is triggered
 
-# Configuration for Rasa Core.
-# https://rasa.com/docs/rasa/core/policies/
-
+# Configuration for Rasa Core: https://rasa.com/docs/rasa/core/policies/
 # Manages dialogue flow, defining how bot responds based on intents identified by NLU pipeline
 policies: 
-# # No configuration for policies was provided. The following default policies were used to train your model.
-# # If you'd like to customize them, uncomment and adjust the policies.
-# # See https://rasa.com/docs/rasa/policies for more information.
 - name: RulePolicy # manages fixed conversational rules and fallback behavior
-core_fallback_action_name: "action_default_fallback" # action to take when fallback triggered, default Rasa
-core_fallback_threshold: 0.3 # threshold for core fallback, when dialogue confidence score is below this value
-enable_fallback_prediction: True # fallback prediction where dialogue management cannot confidently decide next action
+  core_fallback_action_name: "action_default_fallback" # action to take when fallback triggered, default Rasa
+  core_fallback_threshold: 0.3 # threshold for core fallback, when dialogue confidence score is below this value
+  enable_fallback_prediction: True # fallback prediction where dialogue management cannot confidently decide next action
+- name: TEDPolicy # learns from conversation data to handle complex dialogue and generalize to unseen scenarios
+  max_history: 5
+  epochs: 100
