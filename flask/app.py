@@ -28,7 +28,7 @@ def chat():
 
     # Send the user's message to Rasa
     payload = {"sender": "user", "message": user_message}
-    logging.debug(f"Sending payload to Rasa: {payload}")
+    logging.info(f"Sending payload to Rasa: {payload}")
     try:
         response = requests.post(RASA_URL, json=payload)
         response.raise_for_status()
