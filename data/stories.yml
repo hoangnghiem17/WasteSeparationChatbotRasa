@@ -1,1 +1,7 @@
 version: "3.1"
+
+stories:
+  - story: Benutzer fragt nach der Entsorgung eines Einzelitems
+    steps:
+      - intent: mülltrennung_entsorgung_einzelitem
+      - action: action_mülltrennung_entsorgung_einzelitem

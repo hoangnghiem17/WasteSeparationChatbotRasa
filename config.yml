@@ -22,9 +22,11 @@ pipeline:
 - name: DIETClassifier # multi-task model for intent classification and entity recognition
   epochs: 100 # number of training cycles
   constrain_similarities: True # ensure intent similarities are constrained during training to prevent overly confident predictions
+  loss_type: "cross_entropy"
 - name: FallbackClassifier
   threshold: 0.6  # Threshold for NLU fallback
   ambiguity_threshold: 0.1 # If multiple intents have similar confidence scores within 0.1, the fallback intent is triggered
+- name: EntitySynonymMapper # map defined synonyms
 
 # Configuration for Rasa Core: https://rasa.com/docs/rasa/core/policies/
 # Manages dialogue flow, defining how bot responds based on intents identified by NLU pipeline

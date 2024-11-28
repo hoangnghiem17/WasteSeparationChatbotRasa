@@ -160,7 +160,7 @@ nlu:
     - Was kommt in die [schwarze Tonne](abfallart:restmülltonne)?
     - Wo wird [Restmüll](abfallart:restmülltonne) entsorgt?
 
-- intent: mülltrennung_glascontainer
+- intent: mülltrennung_altglascontainer
   examples: |
     - Welche Glasarten gehören in den [Glascontainer](abfallart)?
     - Was kann man im [Glascontainer](abfallart) entsorgen?
@@ -183,3 +183,15 @@ nlu:
     - Warum sollte man Müll trennen?
     - Was bringt die Mülltrennung für die Umwelt?
     - Warum ist die Mülltrennung in Frankfurt wichtig?
+
+- intent: mülltrennung_entsorgung_einzelitem
+  examples: |
+    - Wie entsorge ich [Grünabfälle](item)?
+    - Wohin mit alten [Automaten](item)?
+    - In welchen Container gehört eine [Jalousie](item)?
+    - Wo kann ich meine [Felgen](item) entsorgen?
+    - Was mache ich mit [Obstresten](item)?
+    - In welchen Müll kommt eine [Couch](item)?
+    - Wohin soll ich [Deckenplatten](item) bringen?
+    - Wie werde ich [Batterien](item) los?
+    - Wo entsorge ich [Styropor](item)?
