@@ -12,6 +12,7 @@ import sqlite3
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
+# Define custom Rasa action class 
 class Query_Entsorgung_EinzelItem(Action):
     def name(self) -> str:
         """
@@ -19,7 +20,7 @@ class Query_Entsorgung_EinzelItem(Action):
         """
         return "action_mülltrennung_entsorgung_einzelitem"
 
-    @staticmethod
+    @staticmethod # Does not rely on instance-specific data from class, avoid creating an instance of class to execute logic
     def query_disposal_information(item: str) -> tuple:
         """
         Fetch disposal information from the database for a given item (Abfallart).
@@ -42,7 +43,11 @@ class Query_Entsorgung_EinzelItem(Action):
         conn.close()
         return result
     
-    def run(self, dispatcher: CollectingDispatcher, tracker, domain) -> str:
+    def run(self,
+            dispatcher: CollectingDispatcher, # Sends messages back to user providing utter_message method
+            tracker, # Provides context about conversation (slot values, conversation history, latest user message and intent)
+            domain # # Contains info about chatbot domain configuration (intents, entities, slots and actions)
+            ) -> str:
         """
         Generate a response based on disposal information retrieved from the database.
 
@@ -58,43 +63,23 @@ class Query_Entsorgung_EinzelItem(Action):
                 - If no data is found, a message indicating the lack of information is returned.
         """
         item = tracker.get_slot("item")
-        logging.debug(f"Generating response for item: {item}")
+        if not item:
+            dispatcher.utter_message(text="Ich konnte das Item nicht erkennen. Kannst du das bitte wiederholen?")
+            return []
 
         try:
             entsorgungsinfo = self.query_disposal_information(item)
-            logging.debug(f"Database query result for '{item}': {entsorgungsinfo}")
-
             if entsorgungsinfo:
                 entsorgungsort, adresse, link = entsorgungsinfo
-
-                # Case 1: All columns are available
-                if adresse and link:
-                    response = (
-                        f"Der Entsorgungsort für {item} ist {entsorgungsort} "
-                        f"bei der folgenden Adresse: {adresse}. "
-                        f"Du findest weitere Informationen zu der Adresse hier: {link}"
-                    )
-                    logging.debug(f"Response for item '{item}' (Case 1): {response}")
-                # Case 2: "Link" is empty
-                elif adresse and not link:
-                    response = (
-                        f"Der Entsorgungsort für {item} ist {entsorgungsort} "
-                        f"bei der folgenden Adresse: {adresse}."
-                    )
-                    logging.debug(f"Response for item '{item}' (Case 2): {response}")
-                # Case 3: Both "Link" and "Adresse" are empty
-                elif not adresse and not link:
-                    response = (
-                        f"Der Entsorgungsort für {item} ist {entsorgungsort}."
-                    )
-                    logging.debug(f"Response for item '{item}' (Case 3): {response}")
+                entsorgungsort_text = f"Der Entsorgungsort für {item} ist {entsorgungsort}."
+                adresse_part = f" bei der folgenden Adresse: {adresse}." if adresse else ""
+                link_part = f" Du findest weitere Informationen hier: {link}" if link else ""
+                response = entsorgungsort_text + adresse_part + link_part
             else:
-                # No results from the database
                 response = f"Für {item} konnte ich leider keinen Entsorgungsort finden."
                 logging.warning(f"No disposal info found for item '{item}'.")
         except Exception as e:
-            # Log any unexpected errors
-            logging.error(f"An error occurred while generating response for item '{item}': {e}")
+            logging.error(f"An error occurred: {e}")
             response = "Es ist ein Fehler aufgetreten. Bitte versuche es später erneut."
 
         # Send the response to the user and reset slot
