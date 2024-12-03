@@ -38,8 +38,9 @@ class Query_Entsorgung_EinzelItem(Action):
         logging.debug(f"Querying database for item: {item}")
         conn = sqlite3.connect("abfallABC_entsorgung.db")
         cursor = conn.cursor()
-        cursor.execute("SELECT Entsorgungsweg, Adresse, Link FROM abfallABC_entsorgung WHERE Abfallart = ?", (item,))
+        cursor.execute("SELECT Entsorgungsweg, Adresse, Link FROM abfallABC_entsorgung WHERE LOWER(Abfallart) = LOWER(?)", (item,))
         result = cursor.fetchone()
+        logging.debug(f"Query result for {item}: {result}")
         conn.close()
         return result
     
@@ -56,15 +57,11 @@ class Query_Entsorgung_EinzelItem(Action):
 
         Returns:
             str: A response string providing disposal instructions. The response varies based on the
-            completeness of the data retrieved:
-                - Case 1: All data (disposal method, address, and link) is available.
-                - Case 2: Address is available, but no link is provided.
-                - Case 3: Neither address nor link is available.
-                - If no data is found, a message indicating the lack of information is returned.
+            completeness of the data retrieved.
         """
         item = tracker.get_slot("item")
         if not item:
-            dispatcher.utter_message(text="Ich konnte das Item nicht erkennen. Kannst du das bitte wiederholen?")
+            dispatcher.utter_message(text="Ich konnte das zu entsorgende Item nicht erkennen. Kannst du das bitte wiederholen?")
             return []
 
         try:
@@ -74,7 +71,8 @@ class Query_Entsorgung_EinzelItem(Action):
                 entsorgungsort_text = f"Der Entsorgungsort für {item} ist {entsorgungsort}."
                 adresse_part = f" bei der folgenden Adresse: {adresse}." if adresse else ""
                 link_part = f" Du findest weitere Informationen hier: {link}" if link else ""
-                response = entsorgungsort_text + adresse_part + link_part
+                response = entsorgungsort_text + adresse_part + link_part 
+                logging.debug(f"Response for '{item}': {response}")
             else:
                 response = f"Für {item} konnte ich leider keinen Entsorgungsort finden."
                 logging.warning(f"No disposal info found for item '{item}'.")

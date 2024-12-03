@@ -6,6 +6,8 @@ nlu:
     - grüne Tonne
     - Altpapiertonne
     - Altpapiermülltonne
+    - Altpapier
+    - Altpapiermüll
     - Papiertonne
     - Papiermülltonne
 
@@ -29,6 +31,45 @@ nlu:
   examples: |
     - schwarze Tonne
     - Restmülltonne
+
+- lookup: item
+  examples: |
+    - Altkleider
+    - Aluminium
+    - Asche
+    - Autoteile
+    - Bekleidung
+    - Bücher
+    - Computerteile
+    - Desinfektionsmittel
+    - Elektronik
+    - Essensreste
+    - Felgen
+    - Fette
+    - Fotoapparat
+    - Glühbirne
+    - Gummi
+    - Herd
+    - Holz
+    - Insektenspray
+    - Joghurtbecher
+    - Kassetten
+    - Kerzen
+    - Koffer
+    - Ladegerät
+    - Laub
+    - Maus (PC)
+    - Messer
+    - Nagellack
+    - Pet-Flaschen
+    - Porzellan
+    - Rasierapparat
+    - Schnellhefter
+    - Schuhe
+    - Spiegel
+    - Tannenbaum
+    - Wäschetrockner
+    - Ziegel
 
 - intent: einführung
   examples: |
@@ -106,11 +147,16 @@ nlu:
 
 - intent: abfallentsorgung_schadstoff
   examples: |
-    - Was mache ich mit [Sondermüll](abfallart) wie Lacken oder Lösungsmitteln?
-    - Wo kann ich alte Batterien oder [Schadstoffe](abfallart) abgeben?
-    - Wie entsorge ich Chemikalien oder Farben richtig?
-    - Wie entsorge ich [Schadstoffe](abfallart)?
-    - Wo kann ich [Schadstoffe](abfallart) entsorgen?
+    - Was soll ich mit [Schadstoffen](abfallart) machen?
+    - Wo bringe ich [Schadstoffe](abfallart) hin?
+    - Gibt es eine Sammelstelle für [gefährlichen Abfall](abfallart)?
+    - Wie entsorge ich [gefährlichen Abfall](abfallart)?
+    - Wo werden [Schadstoffe](abfallart) gesammelt?
+    - Kann ich [Chemikalien](abfallart) einfach entsorgen?
+    - Welche Regeln gelten für die Entsorgung von [Gefahrstoffen](abfallart)?
+    - Wohin mit [gefährlichem Abfall](abfallart)?
+    - Was mache ich mit [gefährlichen Stoffen](abfallart)?
+    - Gibt es eine spezielle Abholung für [Schadstoffe](abfallart)?
 
 - intent: abfallentsorgung_sperrmüll
   examples: |
@@ -127,6 +173,7 @@ nlu:
     - Welche [Wertstoffhöfe](abfallart) gibt es in Frankfurt?
     - Wann ist der [Wertstoffhof](abfallart) geöffnet?
     - Wo ist der [Wertstoffhof](abfallart) in Frankfurt?
+    - Was ist der Wertstoffhof?
 
 - intent: mülltrennung_altpapier
   examples: |
@@ -195,3 +242,12 @@ nlu:
     - Wohin soll ich [Deckenplatten](item) bringen?
     - Wie werde ich [Batterien](item) los?
     - Wo entsorge ich [Styropor](item)?
+    - Wo werden [Schuhe](item)?
+    - Was passiert mit [Holz](item) bei der Entsorgung?
+    - Wohin kommen [Altkleider](item)?
+    - Welche Tonne ist richtig für ein [Rasierapparat](item)?`
+    - Wo darf ich [Pet-Flaschen](item) wegwerfen?
+    - Wie muss ich den [Tannenbaum](item) wegwerfen?
+    - Gibt es spezielle Regeln für die Entsorgung von [Nagellack](item)?
+    - Wo kann ich kaputtes [Porzellan](item) abgeben?
+

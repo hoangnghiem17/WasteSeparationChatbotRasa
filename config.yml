@@ -9,24 +9,43 @@ assistant_id: 20241121-143739-crunchy-plasma
 # Configuration for Rasa NLU: https://rasa.com/docs/rasa/nlu/components/
 # Processing and analyzing user messages to determine their intent and extract entities
 language: de
+
 pipeline: 
 # Use Spacykit for german language support for NLU steps
 - name: SpacyNLP
   model: "de_core_news_md"
+
+# Tokenization and embeddings
 - name: SpacyTokenizer # accurate tokenization for german
 - name: SpacyFeaturizer # utlize pre-trained word embeddings to enhance understanding of semantic similarities
+
+# Character-level features for robustness
 - name: CountVectorsFeaturizer # transforms text into numerical vectors with bag-of-words on character-level for improving recognition of misspelled words and variations
-  analyzer: "char_wb" # creates character n-grams only within word boundaries
-  min_ngram: 1 # min n-grams to be considered
-  max_ngram: 4 # max n-grams to be considered
-- name: DIETClassifier # multi-task model for intent classification and entity recognition
-  epochs: 100 # number of training cycles
-  constrain_similarities: True # ensure intent similarities are constrained during training to prevent overly confident predictions
+  analyzer: "word" # analyze word-level n-grams to improve generalization (phrase or structure varies)
+  #analyzer: "char_wb" # creates character n-grams only within word boundaries
+  #min_ngram: 1 # min n-grams to be considered
+  #max_ngram: 4 # max n-grams to be considered
+
+# To enable lookup table during training
+- name: RegexEntityExtractor
+  case_sensitive: False
+  use_lookup_tables: True
+  use_regexes: False
+
+# Multi-task classification
+- name: DIETClassifier # Multi-task model for intent classification and entity recognition
+  epochs: 200 # Number of training cycles
+  constrain_similarities: True # Ensure intent similarities are constrained during training
   loss_type: "cross_entropy"
+  entity_recognition: True
+
+# Fallback handling
 - name: FallbackClassifier
-  threshold: 0.6  # Threshold for NLU fallback
-  ambiguity_threshold: 0.1 # If multiple intents have similar confidence scores within 0.1, the fallback intent is triggered
-- name: EntitySynonymMapper # map defined synonyms
+  threshold: 0.4 # Threshold for NLU fallback
+  ambiguity_threshold: 0.1 # Trigger fallback when intent scores are ambiguous
+
+# Synonym mapping
+- name: EntitySynonymMapper # Map defined synonyms
 
 # Configuration for Rasa Core: https://rasa.com/docs/rasa/core/policies/
 # Manages dialogue flow, defining how bot responds based on intents identified by NLU pipeline
@@ -35,6 +54,7 @@ policies:
   core_fallback_action_name: "action_default_fallback" # action to take when fallback triggered, default Rasa
   core_fallback_threshold: 0.3 # threshold for core fallback, when dialogue confidence score is below this value
   enable_fallback_prediction: True # fallback prediction where dialogue management cannot confidently decide next action
+
 - name: TEDPolicy # learns from conversation data to handle complex dialogue and generalize to unseen scenarios
   max_history: 5
   epochs: 100
