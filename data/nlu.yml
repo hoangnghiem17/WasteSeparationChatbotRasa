@@ -152,14 +152,6 @@ nlu:
     - Was mache ich mit [gefährlichen Stoffen](abfallart)?
     - Gibt es eine spezielle Abholung für [Schadstoffe](abfallart)?
 
-- intent: abfallentsorgung_sperrmüll
-  examples: |
-    - Welche Gegenstände kann ich als [Sperrmüll](abfallart) abholen lassen?
-    - Was ist der Sperrmüllservice?
-    - Was gehört in den [Sperrmüll](abfallart)?
-    - Was kann ich über den [Sperrmüll](abfallart) entsorgen?
-    - Was zählt zum [Sperrmüll](abfallart)?
-
 - intent: abfallentsorgung_wertstoffhof
   examples: |
     - Wie funktioniert die Entsorgung im [Wertstoffhof](abfallart)?
@@ -169,6 +161,14 @@ nlu:
     - Wo ist der [Wertstoffhof](abfallart) in Frankfurt?
     - Was ist der Wertstoffhof?
 
+- intent: abfallentsorgung_sperrmüll
+  examples: |
+    - Welche Gegenstände kann ich als [Sperrmüll](abfallart) abholen lassen?
+    - Was ist der Sperrmüllservice?
+    - Was gehört in den [Sperrmüll](abfallart)?
+    - Was kann ich über den [Sperrmüll](abfallart) entsorgen?
+    - Was zählt zum [Sperrmüll](abfallart)?
+    
 - intent: mülltrennung_altpapier
   examples: |
     - Was kommt in die [grüne Tonne](abfallart:altpapiertonne)?
