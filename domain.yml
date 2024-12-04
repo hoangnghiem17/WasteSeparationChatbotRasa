@@ -9,7 +9,6 @@ intents:
   - fes_kontakt
   - fes_standort
   - abfallentsorgung_müllabholungstermin
-  - abfallentsorgung_verpasste_müllabholung
   - abfallentsorgung_schadstoff
   - abfallentsorgung_sperrmüll
   - abfallentsorgung_wertstoffhof
@@ -18,8 +17,6 @@ intents:
   - mülltrennung_verpackung
   - mülltrennung_restmüll
   - mülltrennung_altglascontainer
-  - mülltrennung_funktionsweise
-  - mülltrennung_wichtigkeit
   - mülltrennung_entsorgung_einzelitem
 
 
@@ -91,10 +88,6 @@ responses:
   - text: "Um die Abholtermine für deinen Müll zu erfahren, wirf einen Blick in den Abfallkalender unter https://www.fes-frankfurt.de/services/abfallkalender. Nach Eingabe deiner Straße und Hausnummer siehst du die spezifischen Abholtage für die jeweiligen Abfallarten. Du kannst auch weiter in die Zukunft oder Vergangenheit navigieren und die Termine bequem als PDF, per Mail oder Kalenderimport nutzen."
   - text: "Den nächsten Abholtermin findest du ganz einfach über den Abfallkalender (https://www.fes-frankfurt.de/services/abfallkalender). Trage dort deine Straße und Hausnummer ein, und du siehst die Daten für die Abholung aller Abfallarten. Die Termine lassen sich auch in einen Kalender übertragen, per E-Mail zusenden oder als PDF speichern."
   - text: "Schau im Abfallkalender (https://www.fes-frankfurt.de/services/abfallkalender) nach, wann deine Müllabholung geplant ist. Mit Eingabe deiner Adresse werden dir die Abholtermine angezeigt, und du kannst sie in die Vergangenheit und Zukunft verschieben. Für mehr Flexibilität kannst du die Termine als PDF exportieren, per Mail abonnieren oder deinem Kalender hinzufügen."
-
-  utter_abfallentsorgung_verpasste_müllabholung:
-  - text: "Falls deine Müllabholung verpasst wurde, kannst du den Vorfall bei der FES melden – online, telefonisch oder über die FES-App. Der Abfall wird dann meist zeitnah nachgeholt. Bitte lass die Tonne weiterhin zugänglich stehen."
-  - text: "Bei einer ausgebliebenen Müllabholung kannst du eine Meldung bei der FES machen – entweder online, telefonisch oder per App. Die Entsorgung erfolgt in der Regel dann so schnell wie möglich. Lass die Tonne bitte weiterhin an einem zugänglichen Ort stehen."
 
   utter_abfallentsorgung_schadstoff:
   - text: "Nutze das Schadstoffmobil für eine sichere und fachgerechte Entsorgung der Sonderabfälle und Schadstoffe. Das Schadstoffmobil macht als mobile Sammelstelle regelmäßig an festen Orten in Frankfurt am Main halt (Online-Terminübersicht: https://www.fes-frankfurt.de/services/schadstoffsammlung). Bitte beachten Sie folgende Hinweise bei der Schadstoffannahme:\n
@@ -222,9 +215,3 @@ responses:
           - Porzellan und Keramik\n
           - Leuchtmittel jeglicher Art\n
           - Stark verschmutzte Gläser"
-
-  utter_mülltrennung_funktionsweise:
-  - text: "In Frankfurt am Main ist die Mülltrennung darauf ausgelegt, Abfälle nach Materialien zu sortieren, um das Recycling zu fördern und die Umwelt zu schonen. Bürger trennen ihren Abfall in verschiedene Kategorien wie Restmüll, Papier, Bioabfälle und Wertstoffe, um die Wiederverwertung zu ermöglichen und den Anteil an Müll zu reduzieren, der verbrannt werden muss. Es gibt darüber hinaus spezielle Sammelstellen und Abholservices für größere oder gefährliche Abfälle wie Sperrmüll und Schadstoffe. Dieses System hilft dabei, wertvolle Rohstoffe zurückzugewinnen und die Umwelt zu entlasten. Informationen und Abholtermine werden von der FES, dem Entsorgungsunternehmen in Frankfurt, zur Verfügung gestellt."
-
-  utter_mülltrennung_wichtigkeit:
-    - text: "Mülltrennung ist entscheidend, um Ressourcen zu schonen und die Umweltbelastung zu reduzieren. Durch sorgfältige Trennung können wertvolle Materialien recycelt statt verbrannt werden, was CO₂-Emissionen mindert und Energie spart. Frankfurt kämpft mit hohen Restmüllmengen, die oft aus falsch entsorgtem Papier, Plastik und organischen Abfällen bestehen. Wenn wir alle besser trennen, unterstützen wir Frankfurt direkt auf dem Weg zur Zero Waste City!"

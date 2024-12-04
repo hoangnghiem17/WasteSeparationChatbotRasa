@@ -139,12 +139,6 @@ nlu:
     - An welchen Tagen wird der Müll abgeholt?
     - Wann wird der Müll bei mir abgeholt?
 
-- intent: abfallentsorgung_verpasste_müllabholung
-  examples: |
-    - Was passiert, wenn der Müll nicht abgeholt wurde?
-    - Was kann ich machen bei einer verpassten Müllabholung?
-    - Was passiert bei einer verpassten Müllabholung?
-
 - intent: abfallentsorgung_schadstoff
   examples: |
     - Was soll ich mit [Schadstoffen](abfallart) machen?
@@ -213,23 +207,6 @@ nlu:
     - Was kann man im [Glascontainer](abfallart) entsorgen?
     - Welche Art von Glas kommt in den [Glascontainer](abfallart)?
     - Was kommt in den [Glascontainer](abfallart)?
-
-- intent: mülltrennung_funktionsweise
-  examples: |
-    - Wie wird der Müll in Frankfurt getrennt?
-    - Was sind die Grundlagen der Mülltrennung in Frankfurt?
-    - Wie ist das System der Mülltrennung in Frankfurt organisiert?
-    - Kannst du mir erklären, wie die Mülltrennung in Frankfurt abläuft?
-    - Wie funktioniert die Mülltrennung in Frankfurt?
-
-- intent: mülltrennung_wichtigkeit
-  examples: |
-    - Warum wird in Frankfurt Wert auf Mülltrennung gelegt?
-    - Wie trägt die Mülltrennung zur Nachhaltigkeit in Frankfurt bei?
-    - Welche Vorteile hat es, Müll zu trennen?
-    - Warum sollte man Müll trennen?
-    - Was bringt die Mülltrennung für die Umwelt?
-    - Warum ist die Mülltrennung in Frankfurt wichtig?
 
 - intent: mülltrennung_entsorgung_einzelitem
   examples: |

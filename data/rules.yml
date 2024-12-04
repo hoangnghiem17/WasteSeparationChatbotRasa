@@ -42,11 +42,6 @@ rules:
   - intent: abfallentsorgung_müllabholungstermin
   - action: utter_abfallentsorgung_müllabholungstermin
 
-- rule: Infos zur verpassten Müllabholung 
-  steps:
-  - intent: abfallentsorgung_verpasste_müllabholung
-  - action: utter_abfallentsorgung_verpasste_müllabholung
-
 - rule: Infos zur Schadstoffentsorgung 
   steps:
   - intent: abfallentsorgung_schadstoff
@@ -86,16 +81,6 @@ rules:
   steps:
   - intent: mülltrennung_altglascontainer
   - action: utter_mülltrennung_altglascontainer
-
-- rule: Funktionsweise Mülltrennung in Frankfurt
-  steps:
-  - intent: mülltrennung_funktionsweise
-  - action: utter_mülltrennung_funktionsweise
-
-- rule: Wichtigkeit Mülltrennung
-  steps:
-  - intent: mülltrennung_wichtigkeit
-  - action: utter_mülltrennung_wichtigkeit
 
 - rule: Entsorgung eines Einzelitems
   steps:
