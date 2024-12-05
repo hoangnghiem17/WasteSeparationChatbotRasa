@@ -47,40 +47,15 @@ rules:
   - intent: abfallentsorgung_schadstoff
   - action: utter_abfallentsorgung_schadstoff
 
-- rule: Infos zum Sperrmüll
-  steps:
-  - intent: abfallentsorgung_sperrmüll
-  - action: utter_abfallentsorgung_sperrmüll
-
 - rule: Infos zum Wertstoffhof
   steps:
   - intent: abfallentsorgung_wertstoffhof
   - action: utter_abfallentsorgung_wertstoffhof
 
-- rule: Infos zum Recycling von Altpapier
+- rule: Beantwortung Fragen zu Abfalltonnen
   steps:
-  - intent: mülltrennung_altpapier
-  - action: utter_mülltrennung_altpapier
-
-- rule: Infos zum Recycling von Biomüll
-  steps:
-  - intent: mülltrennung_biomüll
-  - action: utter_mülltrennung_biomüll
-
-- rule: Infos zum Recycling von Verpackung
-  steps:
-  - intent: mülltrennung_verpackung
-  - action: utter_mülltrennung_verpackung
-
-- rule: Infos zum Recycling von Restmüll
-  steps:
-  - intent: mülltrennung_restmüll
-  - action: utter_mülltrennung_restmüll
-
-- rule: Infos zum Altglascontainer
-  steps:
-  - intent: mülltrennung_altglascontainer
-  - action: utter_mülltrennung_altglascontainer
+  - intent: mülltrennung_abfallart
+  - action: action_mülltrennung_abfallart
 
 - rule: Entsorgung eines Einzelitems
   steps:

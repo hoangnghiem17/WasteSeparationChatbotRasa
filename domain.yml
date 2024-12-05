@@ -10,13 +10,8 @@ intents:
   - fes_standort
   - abfallentsorgung_müllabholungstermin
   - abfallentsorgung_schadstoff
-  - abfallentsorgung_sperrmüll
   - abfallentsorgung_wertstoffhof
-  - mülltrennung_altpapier
-  - mülltrennung_biomüll
-  - mülltrennung_verpackung
-  - mülltrennung_restmüll
-  - mülltrennung_altglascontainer
+  - mülltrennung_abfallart
   - mülltrennung_entsorgung_einzelitem
 
 
@@ -29,12 +24,20 @@ entities:
 
 
 actions:
-  - action_mülltrennung_entsorgung_einzelitem 
+  - action_mülltrennung_entsorgung_einzelitem
+  - action_mülltrennung_abfallart
 
 
 slots:
+  abfallart:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: abfallart
   item:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: item
@@ -103,23 +106,6 @@ responses:
           - Elektro- und Haushaltsgeräte\n
           - Autoreifen und Gasflaschen"
 
-  utter_abfallentsorgung_sperrmüll:
-  - text: "Der Sperrmüllservice bietet Haushalten eine Möglichkeit, große und sperrige Gegenstände wie Möbel, Matratzen oder Teppiche, die nicht in den normalen Hausmüll passen, entsorgen zu lassen durch eine Terminvereinbarung. Das wird entsorgt:\n
-          - Alte Möbel\n
-          - Elektrogeräte ab einer Kantenlänge von ca. 40 cm\n
-          - Teppichböden und Laminat in haushaltsüblichen Mengen\n
-          - Alle sperrigen Gegenstände, die bei einem Umzug relevant sind\n
-          Das wird nicht entsorgt:\n
-          - Einbauten wie Fenster und Türen\n
-          - Sanitäre Einrichtungen\n
-          - Kleinabfälle mit oder ohne Tüte/Behältnis\n
-          - Schadstoffe wie Lacke, Farben, Sprays, Batterien oder auch Energiesparlampen/Leuchtstoffröhren \n
-          - Gewerbetypische Abfälle, Autoreifen\n
-          Beachte, dass zwischen Terminvergabe und Abholservice ca. 10 Arbeitstage liegen können, Terminvereinbarung erfolgt über:\n
-          - Internet: unter www.fes-frankfurt.de den Sperrmüllservice anmelden\n
-          - Telefon: über 0800 2008007-10 rund um die Uhr erreichbar für Sperrmüllanmeldung\n
-          - Servicecenter: persönlich besprechen in Liebfrauenberg 52-54"
-
   utter_abfallentsorgung_wertstoffhof:
   - text: "Der Wertstoffhof ist eine Sammelstelle, an der die Bürger verschiedene Abfälle und Wertstoffe abgeben können, die nicht in den normalen Hausmüll gehören. Die FES übernimmt die schnelle und umweltgerechte Entsorgung. Es können u.a. entsorgt werden:\n
           - Sperrmüll\n
@@ -149,69 +135,3 @@ responses:
             □ Adresse: Breuerwiesenstraße 2 (Höchst)\n
             □ Sommeröffnungszeiten (01.04. – 30.09.): Mo.–Sa. 8.00–17.00 Uhr\n
                   □ Winteröffnungszeiten (01.10. – 31.03.): Mo.–Sa. 10.00–16.00 Uhr"
-                
-  utter_mülltrennung_altpapier:
-  - text: "Die Altpapiertonne hat einen grünen Deckel mit einem grau/schwarzen Korpus. Hierin gehören Papier und Pappe ohne Beschichtung und unbeschmutzt, sowie:\n
-          - Pappen und Kartonagen\n
-          - Zeitungen, Illustrierte, Kataloge\n
-          - Bücher und Hefte\n
-          Nicht in die Altpapiertonne kommt:\n
-          - Stark verschmutztes Papier (Restmüll)\n
-          - Beschichtetes Papier (Restmüll)\n
-          - Pergament- und Hygienepapiere, Windeln (Restmüll)"
-
-  utter_mülltrennung_biomüll:
-  - text: "Die Biotonne hat einen braunen Deckel mit einem grau/schwarzen Korpus. Feuchte Biofälle wie Salat- oder Obst- und Gemüsereste können Sie in Zeitungs- oder Küchenpapier wickeln, um die Tonne vor starker Verschmutzung und Geruch zu schützen. Darin gehören alle biologisch abbaubaren Abfälle aus privaten Haushalten:\n
-          - Obst- und Gemüseabfälle (auch Zitrusfrüchte, Bananen- und Nussschalen)\n
-          - Rohe und gekochte Speise- und Lebensmittelreste\n
-          - Kaffee- und Teesatz, Filtertüten, Eierschalen\n
-          - Grünschnitt und Laub\n
-          Nicht in die Biotonne kommt:\n
-          - Plastiktüten, Verpackungen aus Kunststoff und Metall (gelbe Verpackungstonne)\n
-          - Kehricht und Staubsaugerbeutel (Restmüll)\n
-          - Zigarettenkippen (Restmüll)\n
-          - Windeln und andere gebrauchte Hygieneartikel (Restmüll)"
-
-  utter_mülltrennung_verpackung:
-  - text: "Die Altpapiertonne hat einen gelben Deckel mit einem grau/schwarzen Korpus. Hierin gehören alle Verpackungen mit oder ohne Symbol wie den grünen Punkt, die nicht ausschließlich aus Papier, Pappe oder Glas bestehen. Die Verpackungen müssen nicht gespült aber leer sein. Dazu gehören:\n
-          - Verpackungen aus Kunststoff wie Folien, Becher und Styropor\n
-          - Verbundverpackungen aus Materialmix (z.B. Alu + Papier) wie Getränkekartons und Milchtüten\n
-          - Verpackungen aus Metall wie Konserven- und Getränkedosen\n
-          - Geschäumte Kunststoffe, z.B. Obst- und Gemüseverpackungen\n
-          Nicht in die Verpackungstonne kommt:\n
-          - Verpackungen aus Papier und Pappe (Altpapiertonne)\n
-          - Verpackungen aus Glas (Altglascontainer)\n
-          - Stark verschmutze Fast-Food-Verpackungen wie Pizzakartons (Restmüll)"
-
-  utter_mülltrennung_restmüll:
-  - text: "Die Restmülltonne hat einen grau/schwarzen Deckel und Korpus. Hierin gehören alle Abfälle, die aufgrund von Verunreinigung oder Vermischung in keine der anderen 3 Tonnen entsorgt werden können:\n
-          - Hygieneartikel (z.B. Taschentücher, Damenbinden, Wattebäusche)\n
-          - Windeln\n
-          - Staub, Asche, Kehricht\n
-          - Zigarettenkippen\n
-          - Küchentücher, Putzlappen\n
-          - Staubsaugerbeutel\n
-          - Kleintierstreu\n
-          - Trinkgläser, Porzellan, Keramik, alle Scherben\n
-          Nicht in die Restmülltonne kommt:\n
-          - Elektrogeräte/Schrott (Kleingeräte: Wertstoffhöfe, Großgeräte: Sperrmüll)\n
-          - Batterien (spezielle Sammelbehälter in Supermärkten und öffentlichen Gebäuden)\n
-          - Sonderabfall/Schadstoffe wie Farben, Lacke Sprays etc. (Schadstoffmobil)\n
-          - Verpackung jeglicher Art\n
-          - Bauschutt\n
-          - Essensreste"
-
-  utter_mülltrennung_altglascontainer:
-  - text: "Die blauen Altglascontainer stehen im gesamten Stadtgebiet an zentralen, gut erreichbaren Plätzen und werden in der Regel alle 14 Tage geleert. Bitte nehmen Sie Rücksicht auf Ihre Mitbürgerinnen und Mitbürger und werfen das Altglas nur an Werktagen von 7.00 - 20.00 Uhr ein. In den Altglascontainer gehören gebrauchte Glasverpackungen nach den Farben weiß, grün und braun getrennt, wobei blaues oder buntes Glas zum Grünglas gehört. Das Entfernen der Deckel ist nicht notwendig. Beispiele zu was darein gehört:\n
-          - Getränkeflaschen\n
-          - Ketchupflaschen\n
-          - Arzneimittelflaschen\n
-          - Deckelgläser wie Marmeladengläser\n
-          - Cremedosen\n
-          - Parfumflacons\n
-          Nicht in den Altglascontainer gehört:\n
-          - Flachglas wie Spiegel und Scheiben\n
-          - Trinkgläser und Blumenvasen\n
-          - Porzellan und Keramik\n
-          - Leuchtmittel jeglicher Art\n
-          - Stark verschmutzte Gläser"

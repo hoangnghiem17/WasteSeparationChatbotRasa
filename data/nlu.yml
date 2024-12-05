@@ -1,7 +1,7 @@
 version: "3.1"
 
 nlu:
-- synonym: altpapiertonne
+- synonym: altpapier
   examples: |
     - grüne Tonne
     - Altpapiertonne
@@ -11,7 +11,7 @@ nlu:
     - Papiertonne
     - Papiermülltonne
 
-- synonym: biotonne
+- synonym: biomüll
   examples: |
     - braune Tonne
     - Biotonne
@@ -19,18 +19,31 @@ nlu:
     - Ökotonne
     - Komposttonne
 
-- synonym: verpackungstonne
+- synonym: verpackung
   examples: |
     - gelbe Tonne
     - Verpackungstonne
     - Verpackungsmülltonne
+    - Verpackungsmüll
     - Leichtverpackungstonne
     - LVP-Tonne
 
-- synonym: restmülltonne
+- synonym: restmüll
   examples: |
     - schwarze Tonne
     - Restmülltonne
+
+- synonym: sperrmüll
+  examples: |
+    - Sperrmüll
+    - Sperrmüllservice
+
+- synonym: altglas
+  examples: |
+    - Altglas
+    - Altglascontainer
+    - Glas
+    - Glascontainer
 
 - lookup: item
   examples: |
@@ -161,52 +174,20 @@ nlu:
     - Wo ist der [Wertstoffhof](abfallart) in Frankfurt?
     - Was ist der Wertstoffhof?
 
-- intent: abfallentsorgung_sperrmüll
+- intent: mülltrennung_abfallart
   examples: |
-    - Welche Gegenstände kann ich als [Sperrmüll](abfallart) abholen lassen?
-    - Was ist der Sperrmüllservice?
-    - Was gehört in den [Sperrmüll](abfallart)?
-    - Was kann ich über den [Sperrmüll](abfallart) entsorgen?
-    - Was zählt zum [Sperrmüll](abfallart)?
-    
-- intent: mülltrennung_altpapier
-  examples: |
-    - Was kommt in die [grüne Tonne](abfallart:altpapiertonne)?
-    - Was gehört in die [Altpapiertonne](abfallart:altpapiertonne)?
-    - Welche Abfälle gehören in die [grüne Tonne](abfallart:altpapiertonne)?
-    - Was kann ich in die [Altpapiertonne](abfallart:altpapiertonne) werfen?
-    - Wo wird [Altpapiermüll](abfallart:altpapiertonne) entsorgt?
-
-- intent: mülltrennung_biomüll
-  examples: |
-    - Was kommt in die [braune Tonne](abfallart:biotonne)?
-    - Was gehört in die [Biotonne](abfallart:biotonne)?
-    - Welche Abfälle gehören in die [braune Tonne](abfallart:biotonne)?
-    - Was kann ich in die [Biotonne](abfallart:biotonne) werfen?
-    - Wo wird [Biomüll](abfallart:biotonne) entsorgt?
-
-- intent: mülltrennung_verpackung
-  examples: |
-    - Was kommt in die [gelbe Tonne](abfallart:verpackungstonne)?
-    - Was gehört in die [Verpackungstonne](abfallart:verpackungstonne)?
-    - Welche Abfälle gehören in die [gelbe Tonne](abfallart:verpackungstonne)?
-    - Was kann ich in die [Verpackungstonne](abfallart:verpackungstonne) werfen?
-    - Wo wird [Verpackungsmüll](abfallart:verpackungstonne) entsorgt?
-
-- intent: mülltrennung_restmüll
-  examples: |
-    - Was kann ich in den [Restmüll](abfallart:restmülltonne) werfen?
-    - Welche Abfälle gehören in die [schwarze Tonne](abfallart:restmülltonne)?
-    - Was gehört in die [Restmülltonne](abfallart:restmülltonne)?
-    - Was kommt in die [schwarze Tonne](abfallart:restmülltonne)?
-    - Wo wird [Restmüll](abfallart:restmülltonne) entsorgt?
-
-- intent: mülltrennung_altglascontainer
-  examples: |
-    - Welche Glasarten gehören in den [Glascontainer](abfallart)?
-    - Was kann man im [Glascontainer](abfallart) entsorgen?
-    - Welche Art von Glas kommt in den [Glascontainer](abfallart)?
-    - Was kommt in den [Glascontainer](abfallart)?
+    - Was gehört in den [Restmüll](abfallart:restmüll)?
+    - Welche Abfälle kommen in die [graue Tonne](abfallart:restmüll)? 
+    - Was kommt in die [Biotonne](abfallart:biomüll)?
+    - Welche Abfälle gehören in den [Biomüll](abfallart:biomüll)?
+    - Was gehört in die [Altpapiertonne](abfallart:altpapier)?
+    - Welche Abfälle kommen in die [grüne Tonne](abfallart:altpapier)?
+    - Was kann ich in den [Gelben Sack](abfallart:verpackung) werfen?
+    - Welche Abfälle gehören in die [Verpackungstonne](abfallart:verpackung)?
+    - Was gehört in den [Sperrmüll](abfallart:sperrmüll)?
+    - Wo entsorge ich [alte Möbel](abfallart:sperrmüll)?
+    - Welche Flaschen kommen in den [Altglascontainer](abfallart:altglas)?
+    - Wo entsorge ich [Glas](abfallart:altglas)?
 
 - intent: mülltrennung_entsorgung_einzelitem
   examples: |
