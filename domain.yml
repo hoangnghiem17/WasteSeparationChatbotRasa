@@ -9,7 +9,6 @@ intents:
   - fes_kontakt
   - fes_standort
   - abfallentsorgung_müllabholungstermin
-  - abfallentsorgung_schadstoff
   - abfallentsorgung_wertstoffhof
   - mülltrennung_abfallart
   - mülltrennung_entsorgung_einzelitem

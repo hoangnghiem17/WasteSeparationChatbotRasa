@@ -1,34 +1,42 @@
 FES Definition
 - Was ist die FES?
 - Was bietet die FES an?
+
 FES Kontakt
 - Was ist die Email der FES?
 - Wie kann man die FES erreichen?
+
 Müllabholungstermin
 - Wann wird der Müll abgeholt?
 - Wann werden Mülltonnen geleert?
-Schadstoff
-- Wo bringe ich Schadstoffe hin?
-- Welche Regeln gelten für die Entsorgung von Chemiestoffen?
+
 Wertstoffhof
 - Wo ist der Werstoffhof?
 - Was kann ich beim Wertstoffhof hinterlassen?
+
 Sperrmüll
--
--
+- Was gehört in den Sperrmüll?
+- Welche Abfälle kommen in den Sperrmüll?
+
 Altpapiertonne (grün)
--
--
+- Was gehört in die Altpapiertonne?
+- Was kommt in die Altpapiertonne?
+
 Biomülltonne (braun)
--
--
+- Was kommt in die Biotonne?
+- Was gehört in die Biotonne?
+
 Verpackungstonne (gelb)
--
--
+- Was kann ich in die gelbe Tonne werfen?
+- Welche Abfälle kommen in die gelbe Tonne?
+
 Restmülltonne (schwarz)
--
--
+- Was gehört in den Restmüll?
+- Was entsorge ich in der Restmülltonne?
+
 Altglascontainer (blau)
--
--
-Entsorgung einzelnes item
+- Welche Flaschen kommen in den Glascontainer?
+- Was kommt in den Glascontainer?
+
+Entsorgung einzelnes Item
+- 

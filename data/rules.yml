@@ -42,11 +42,6 @@ rules:
   - intent: abfallentsorgung_müllabholungstermin
   - action: utter_abfallentsorgung_müllabholungstermin
 
-- rule: Infos zur Schadstoffentsorgung 
-  steps:
-  - intent: abfallentsorgung_schadstoff
-  - action: utter_abfallentsorgung_schadstoff
-
 - rule: Infos zum Wertstoffhof
   steps:
   - intent: abfallentsorgung_wertstoffhof

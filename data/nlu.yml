@@ -152,23 +152,9 @@ nlu:
     - An welchen Tagen wird der Müll abgeholt?
     - Wann wird der Müll bei mir abgeholt?
 
-- intent: abfallentsorgung_schadstoff
-  examples: |
-    - Was soll ich mit [Schadstoffen](abfallart) machen?
-    - Wo bringe ich [Schadstoffe](abfallart) hin?
-    - Gibt es eine Sammelstelle für [gefährlichen Abfall](abfallart)?
-    - Wie entsorge ich [gefährlichen Abfall](abfallart)?
-    - Wo werden [Schadstoffe](abfallart) gesammelt?
-    - Kann ich [Chemikalien](abfallart) einfach entsorgen?
-    - Welche Regeln gelten für die Entsorgung von [Gefahrstoffen](abfallart)?
-    - Wohin mit [gefährlichem Abfall](abfallart)?
-    - Was mache ich mit [gefährlichen Stoffen](abfallart)?
-    - Gibt es eine spezielle Abholung für [Schadstoffe](abfallart)?
-
 - intent: abfallentsorgung_wertstoffhof
   examples: |
     - Wie funktioniert die Entsorgung im [Wertstoffhof](abfallart)?
-    - Was kann ich beim [Wertstoffhof](abfallart) entsorgen?
     - Welche [Wertstoffhöfe](abfallart) gibt es in Frankfurt?
     - Wann ist der [Wertstoffhof](abfallart) geöffnet?
     - Wo ist der [Wertstoffhof](abfallart) in Frankfurt?
@@ -182,30 +168,30 @@ nlu:
     - Welche Abfälle gehören in den [Biomüll](abfallart:biomüll)?
     - Was gehört in die [Altpapiertonne](abfallart:altpapier)?
     - Welche Abfälle kommen in die [grüne Tonne](abfallart:altpapier)?
-    - Was kann ich in den [Gelben Sack](abfallart:verpackung) werfen?
+    - Was kann ich in die [gelbe Tonne](abfallart:verpackung) werfen?
     - Welche Abfälle gehören in die [Verpackungstonne](abfallart:verpackung)?
     - Was gehört in den [Sperrmüll](abfallart:sperrmüll)?
-    - Wo entsorge ich [alte Möbel](abfallart:sperrmüll)?
     - Welche Flaschen kommen in den [Altglascontainer](abfallart:altglas)?
-    - Wo entsorge ich [Glas](abfallart:altglas)?
+    - Wie entsorge ich [Schadstoffe](abfallart)?
+    - Wo werden [Schadstoffe](abfallart) gesammelt?
 
 - intent: mülltrennung_entsorgung_einzelitem
   examples: |
     - Wie entsorge ich [Grünabfälle](item)?
-    - Wohin mit alten [Automaten](item)?
+    - Wohin mit alten [Obstresten](item)?
     - In welchen Container gehört eine [Jalousie](item)?
     - Wo kann ich meine [Felgen](item) entsorgen?
-    - Was mache ich mit [Obstresten](item)?
+    - Was mache ich mit einem [Automaten](item)?
     - In welchen Müll kommt eine [Couch](item)?
-    - Wohin soll ich [Deckenplatten](item) bringen?
+    - Wohin sollen [Deckenplatten](item) gebracht werden?
     - Wie werde ich [Batterien](item) los?
     - Wo entsorge ich [Styropor](item)?
-    - Wo werden [Schuhe](item)?
+    - Wo werden [Schuhe](item) entsorgt?
     - Was passiert mit [Holz](item) bei der Entsorgung?
     - Wohin kommen [Altkleider](item)?
-    - Welche Tonne ist richtig für ein [Rasierapparat](item)?`
-    - Wo darf ich [Pet-Flaschen](item) wegwerfen?
-    - Wie muss ich den [Tannenbaum](item) wegwerfen?
-    - Gibt es spezielle Regeln für die Entsorgung von [Nagellack](item)?
-    - Wo kann ich kaputtes [Porzellan](item) abgeben?
+    - Welche Tonne ist richtig für ein [Rasierapparat](item)?
+    - Wo sollte man [Pet-Flaschen](item) wegwerfen?
+    - Wie muss man den [Tannenbaum](item) wegwerfen?
+    - Was gilt für die Entsorgung von [Nagellack](item)?
+    - Wo wird kaputtes [Porzellan](item) abgegeben?
 
