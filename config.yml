@@ -26,18 +26,13 @@ pipeline:
   #min_ngram: 1 # min n-grams to be considered
   #max_ngram: 4 # max n-grams to be considered
 
-# To enable lookup table during training
-- name: RegexEntityExtractor
-  case_sensitive: False
-  use_lookup_tables: True
-  use_regexes: False
-
 # Multi-task classification
 - name: DIETClassifier # Multi-task model for intent classification and entity recognition
   epochs: 200 # Number of training cycles
   constrain_similarities: True # Ensure intent similarities are constrained during training
   loss_type: "cross_entropy"
   entity_recognition: True
+  random_seed: 42
 
 # Fallback handling
 - name: FallbackClassifier
@@ -58,3 +53,4 @@ policies:
 - name: TEDPolicy # learns from conversation data to handle complex dialogue and generalize to unseen scenarios
   max_history: 5
   epochs: 100
+  random_seed: 42

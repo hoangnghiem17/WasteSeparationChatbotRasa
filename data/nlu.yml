@@ -38,6 +38,14 @@ nlu:
     - Sperrmüll
     - Sperrmüllservice
 
+- synonym: schadstoff
+  examples: |
+    - Schadstoff
+    - Sondermüll
+    - Sonderabfall
+    - Chemikalien
+    - Gefahrstoff
+
 - synonym: altglas
   examples: |
     - Altglas
@@ -45,44 +53,6 @@ nlu:
     - Glas
     - Glascontainer
 
-- lookup: item
-  examples: |
-    - Altkleider
-    - Aluminium
-    - Asche
-    - Autoteile
-    - Bekleidung
-    - Bücher
-    - Computerteile
-    - Desinfektionsmittel
-    - Elektronik
-    - Essensreste
-    - Felgen
-    - Fette
-    - Fotoapparat
-    - Glühbirne
-    - Gummi
-    - Herd
-    - Holz
-    - Insektenspray
-    - Joghurtbecher
-    - Kassetten
-    - Kerzen
-    - Koffer
-    - Ladegerät
-    - Laub
-    - Maus (PC)
-    - Messer
-    - Nagellack
-    - Pet-Flaschen
-    - Porzellan
-    - Rasierapparat
-    - Schnellhefter
-    - Schuhe
-    - Spiegel
-    - Tannenbaum
-    - Wäschetrockner
-    - Ziegel
 
 - intent: einführung
   examples: |
@@ -172,8 +142,6 @@ nlu:
     - Welche Abfälle gehören in die [Verpackungstonne](abfallart:verpackung)?
     - Was gehört in den [Sperrmüll](abfallart:sperrmüll)?
     - Welche Flaschen kommen in den [Altglascontainer](abfallart:altglas)?
-    - Wie entsorge ich [Schadstoffe](abfallart)?
-    - Wo werden [Schadstoffe](abfallart) gesammelt?
 
 - intent: mülltrennung_entsorgung_einzelitem
   examples: |

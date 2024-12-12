@@ -91,20 +91,6 @@ responses:
   - text: "Den nächsten Abholtermin findest du ganz einfach über den Abfallkalender (https://www.fes-frankfurt.de/services/abfallkalender). Trage dort deine Straße und Hausnummer ein, und du siehst die Daten für die Abholung aller Abfallarten. Die Termine lassen sich auch in einen Kalender übertragen, per E-Mail zusenden oder als PDF speichern."
   - text: "Schau im Abfallkalender (https://www.fes-frankfurt.de/services/abfallkalender) nach, wann deine Müllabholung geplant ist. Mit Eingabe deiner Adresse werden dir die Abholtermine angezeigt, und du kannst sie in die Vergangenheit und Zukunft verschieben. Für mehr Flexibilität kannst du die Termine als PDF exportieren, per Mail abonnieren oder deinem Kalender hinzufügen."
 
-  utter_abfallentsorgung_schadstoff:
-  - text: "Nutze das Schadstoffmobil für eine sichere und fachgerechte Entsorgung der Sonderabfälle und Schadstoffe. Das Schadstoffmobil macht als mobile Sammelstelle regelmäßig an festen Orten in Frankfurt am Main halt (Online-Terminübersicht: https://www.fes-frankfurt.de/services/schadstoffsammlung). Bitte beachten Sie folgende Hinweise bei der Schadstoffannahme:\n
-          - Nur haushaltsübliche Sonderabfälle von in Frankfurt gemeldeten Privatpersonen und Kleingewerbetreibenden werden angenommen\n
-          - Liefere die Schadstoffe nach Arten getrennt und möglichst in Originalverpackung im Schadstoffmobil ab\n
-          - Die Behältnisse müssen dicht geschlossen sein\n
-          - Die Abgabemenge ist auf maximal 100kg/100l Gesamtaußenvolumen pro Tag begrenzt\n
-          - Übergebe die Schadstoffabfälle direkt dem Fachpersonal im FES-Schadstoffmobil und stelle sie auf keinen Fall anonym ab\n
-          Von der Sammlung ausgeschlossen sind:\n
-          - Infektiöse Abfälle\n
-          - Explosive Abfälle\n
-          - Radioaktive Abfälle\n
-          - Elektro- und Haushaltsgeräte\n
-          - Autoreifen und Gasflaschen"
-
   utter_abfallentsorgung_wertstoffhof:
   - text: "Der Wertstoffhof ist eine Sammelstelle, an der die Bürger verschiedene Abfälle und Wertstoffe abgeben können, die nicht in den normalen Hausmüll gehören. Die FES übernimmt die schnelle und umweltgerechte Entsorgung. Es können u.a. entsorgt werden:\n
           - Sperrmüll\n

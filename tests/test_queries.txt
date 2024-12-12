@@ -12,11 +12,7 @@ Müllabholungstermin
 
 Wertstoffhof
 - Wo ist der Werstoffhof?
-- Was kann ich beim Wertstoffhof hinterlassen?
-
-Sperrmüll
-- Was gehört in den Sperrmüll?
-- Welche Abfälle kommen in den Sperrmüll?
+- Wie funktioniert der Wertstoffhof?
 
 Altpapiertonne (grün)
 - Was gehört in die Altpapiertonne?
@@ -37,6 +33,3 @@ Restmülltonne (schwarz)
 Altglascontainer (blau)
 - Welche Flaschen kommen in den Glascontainer?
 - Was kommt in den Glascontainer?
-
-Entsorgung einzelnes Item
-- 

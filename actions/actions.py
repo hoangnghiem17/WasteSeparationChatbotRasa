@@ -9,10 +9,11 @@ from rasa_sdk import Action
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 import sqlite3
+from rapidfuzz import process
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# New action for explaining bin contents
+# Action for handling bin contents
 class ActionExplainBinContents(Action):
     def name(self) -> str:
         return "action_mülltrennung_abfallart"
@@ -20,6 +21,7 @@ class ActionExplainBinContents(Action):
     def run(
         self, dispatcher: CollectingDispatcher, tracker, domain
     ) -> list:
+        # Fetches value of abfallart slot
         abfallart = tracker.get_slot("abfallart")
         
         # Define static bin content mappings
@@ -111,6 +113,7 @@ Nicht in den Altglascontainer gehört:
 - Stark verschmutzte Gläser"""
         }
 
+        # Generate answer based on abfallart extracted and dictionary
         if abfallart in bin_contents:
             response = bin_contents[abfallart]
         else:
@@ -118,8 +121,8 @@ Nicht in den Altglascontainer gehört:
 
         dispatcher.utter_message(text=response)
         return []
-    
-# Action for handling specific item disposal queries
+
+# Action for handling queries about disposal of specific items
 class Query_Entsorgung_EinzelItem(Action):
     def name(self) -> str:
         """
@@ -130,45 +133,54 @@ class Query_Entsorgung_EinzelItem(Action):
     @staticmethod # Does not rely on instance-specific data from class, avoid creating an instance of class to execute logic
     def query_disposal_information(item: str) -> tuple:
         """
-        Fetch disposal information from the database for a given item (Abfallart).
+        Fetch disposal information from the database for a given item (Abfallart) using fuzzy matching.
 
         Args:
-            item_name (str): Name of the item to query in the database.
+            item (str): Name of the item to query in the database.
 
         Returns:
             tuple or None: A tuple containing the disposal information:
                 - Entsorgungsweg (str): The method or place of disposal (e.g., "Recyclingzentrum").
                 - Adresse (str or None): The address of the disposal location, if available.
                 - Link (str or None): A URL with more information, if available.
-                Returns None if no matching row is found.
+                Returns None if no sufficiently close match is found.
         """
         logging.debug(f"Querying database for item: {item}")
         conn = sqlite3.connect("abfallABC_entsorgung.db")
         cursor = conn.cursor()
-        cursor.execute("SELECT Entsorgungsweg, Adresse, Link FROM abfallABC_entsorgung WHERE LOWER(Abfallart) = LOWER(?)", (item,))
-        result = cursor.fetchone()
-        logging.debug(f"Query result for {item}: {result}")
+        
+        # Fetch all items from the database
+        cursor.execute("SELECT * FROM abfallABC_entsorgung")
+        db_items = cursor.fetchall()
         conn.close()
-        return result
+        
+        # Perform fuzzy matching on extracted item name and Abfallart in database
+        item_names = [row[0] for row in db_items]
+        match = process.extractOne(item, item_names, score_cutoff=75)
+        if match:
+            best_match, score, _ = match  
+            logging.debug(f"Best match for '{item}': {best_match} with score {score}")
+            
+            # Retrieve the matching row
+            for row in db_items:
+                if row[0] == best_match:
+                    return row[1:]  # Skip Abfallart return the rest of the information
+        return None
+
     
     def run(self,
-            dispatcher: CollectingDispatcher, # Sends messages back to user providing utter_message method
-            tracker, # Provides context about conversation (slot values, conversation history, latest user message and intent)
-            domain # # Contains info about chatbot domain configuration (intents, entities, slots and actions)
-            ) -> str:
+            dispatcher: CollectingDispatcher,
+            tracker,
+            domain) -> list:
         """
         Generate a response based on disposal information retrieved from the database.
 
-        Args:
-            item_name (str): The name of the item for which disposal information is requested.
-
         Returns:
-            str: A response string providing disposal instructions. The response varies based on the
-            completeness of the data retrieved.
+            list: A list of events, such as resetting the "item" slot.
         """
         item = tracker.get_slot("item")
         if not item:
-            dispatcher.utter_message(text="Ich konnte das zu entsorgende Item nicht erkennen. Kannst du das bitte wiederholen?")
+            dispatcher.utter_message(text="Ich konnte das zu entsorgende Objekt nicht erkennen. Bitte überprüfe deine Eingabe oder versuche es mit einem ähnlichen Begriff.")
             return []
 
         try:
@@ -178,10 +190,10 @@ class Query_Entsorgung_EinzelItem(Action):
                 entsorgungsort_text = f"Der Entsorgungsort für {item} ist {entsorgungsort}."
                 adresse_part = f" bei der folgenden Adresse: {adresse}." if adresse else ""
                 link_part = f" Du findest weitere Informationen hier: {link}" if link else ""
-                response = entsorgungsort_text + adresse_part + link_part 
+                response = entsorgungsort_text + adresse_part + link_part
                 logging.debug(f"Response for '{item}': {response}")
             else:
-                response = f"Für {item} konnte ich leider keinen Entsorgungsort finden."
+                response = f"Für {item} konnte ich leider keinen Entsorgungsort gemäß den Informationen des Abfallzentrums in Frankfurt finden (https://www.recyclingzentrum-frankfurt.de/abfall-abc)."
                 logging.warning(f"No disposal info found for item '{item}'.")
         except Exception as e:
             logging.error(f"An error occurred: {e}")
