@@ -7,6 +7,13 @@ document.getElementById("user-input").addEventListener("keypress", function (eve
     }
 });
 
+// Function to automatically scroll the chat window to the bottom
+function scrollToBottom() {
+    const chatWindow = document.getElementById("chat-window"); // Target the chat window
+    chatWindow.scrollTop = chatWindow.scrollHeight; // Set the scroll position to the bottom
+}
+
+// Main message handling function
 function handleSend() {
     const userInput = document.getElementById("user-input").value;
     if (!userInput) {
@@ -18,6 +25,9 @@ function handleSend() {
     userMessageDiv.textContent = userInput; // Set the user's message as the content
     userMessageDiv.classList.add("message", "user-message"); // Add the classes for styling
     document.getElementById("messages").appendChild(userMessageDiv); // Add user's message to chat window
+
+    // Automatically scroll to the bottom after appending the user's message
+    scrollToBottom();
 
     // Send user's message as JSON to Backend (Flask /chat endpoint)
     fetch("/chat", {
@@ -37,12 +47,18 @@ function handleSend() {
         }
         botResponseDiv.classList.add("message", "bot-message"); // Add the classes for styling
         document.getElementById("messages").appendChild(botResponseDiv); // Add bot's response to chat window
+
+        // Automatically scroll to the bottom after appending the bot's message
+        scrollToBottom();
     })
     .catch(error => {
         const errorDiv = document.createElement("div");
         errorDiv.textContent = "Error: Unable to connect to the server.";
         errorDiv.classList.add("message", "bot-message"); // Add styling class for bot error messages
         document.getElementById("messages").appendChild(errorDiv);
+
+        // Automatically scroll to the bottom after appending the error message
+        scrollToBottom();
     });
 
     // Clear input field after sending message
