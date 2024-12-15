@@ -21,10 +21,10 @@ pipeline:
 
 # Character-level features for robustness
 - name: CountVectorsFeaturizer # transforms text into numerical vectors with bag-of-words on character-level for improving recognition of misspelled words and variations
-  analyzer: "word" # analyze word-level n-grams to improve generalization (phrase or structure varies)
-  #analyzer: "char_wb" # creates character n-grams only within word boundaries
-  #min_ngram: 1 # min n-grams to be considered
-  #max_ngram: 4 # max n-grams to be considered
+  #analyzer: "word" # analyze word-level n-grams to improve generalization (phrase or structure varies)
+  analyzer: "char_wb" # creates character n-grams only within word boundaries
+  min_ngram: 1 # min n-grams to be considered
+  max_ngram: 4 # max n-grams to be considered
 
 # Multi-task classification
 - name: DIETClassifier # Multi-task model for intent classification and entity recognition
