@@ -2,8 +2,8 @@
 
 # Start the Rasa NLU server in the background
 echo "Starting Rasa NLU server..."
-python -m rasa run --enable-api --cors "*" --port 5005 &
+rasa run --enable-api --cors "*" --port 5005 &
 
 # Start the Rasa Action server in the foreground
 echo "Starting Rasa Action server..."
-python -m rasa run actions --port 5055
+rasa run actions --port 5055
