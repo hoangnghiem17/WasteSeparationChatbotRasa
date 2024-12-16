@@ -33,7 +33,7 @@ COPY . /app/
 COPY start_services.sh /app/start_services.sh
 
 # Make the script executable
-RUN chmod +x /app/start_services.sh
+RUN chmod +x /app/start_services.sh && chown root:root /app/start_services.sh
 
 # Use the script as the container's default command
 CMD ["/app/start_services.sh"]
