@@ -1,1 +1,1 @@
-web: /app/start_services.sh
+web: bash /app/start_services.sh
