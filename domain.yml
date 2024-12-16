@@ -51,9 +51,9 @@ responses:
   - text: "Sorry, das war nicht ganz klar für mich. Frag mich gerne etwas zu Müllentsorgung oder Recycling in Frankfurt."
 
   utter_einführung:
-  - text: "Hallo und willkommen! Ich bin dein digitaler Assistent für die Mülltrennung in Frankfurt am Main. Frag mich einfach nach Informationen zu FES-Abfallentsorgungsterminen, den Inhalten der verschiedenen Tonnen oder zu speziellen Entsorgungen wie Schadstoffsammlung, Sperrmüll oder Wertstoffhöfen."
-  - text: "Hi! Ich bin dein Assistent für die Mülltrennung in Frankfurt. Hast du Fragen zu den Entsorgungsterminen, den Tonneninhalten oder zur Entsorgung von Schadstoffen und Sperrmüll? Ich helfe dir gerne weiter!"
-  - text: "Guten Tag! Ich bin hier, um dir bei der Mülltrennung in Frankfurt zu helfen. Brauchst du Infos zu Abfallentsorgungsterminen, was in die einzelnen Tonnen gehört oder zu speziellen Entsorgungen wie Wertstoffhöfen und Sperrmüll? Frag mich einfach!"
+  - text: "Hallo und willkommen! Ich bin dein digitaler Assistent für die Mülltrennung in Frankfurt am Main. Frag mich einfach nach Informationen zur FES, Müllabholungsterminen, den Inhalten der verschiedenen Tonnen oder zu speziellen Entsorgungen wie Schadstoffsammlung, Sperrmüll oder Wertstoffhöfen."
+  - text: "Hi! Ich bin dein Assistent für die Mülltrennung in Frankfurt. Hast du Fragen zu den Müllentsorgungsterminen, den Tonneninhalten oder zur Entsorgung von Schadstoffen und Sperrmüll? Ich helfe dir gerne weiter!"
+  - text: "Guten Tag! Ich bin hier, um dir bei der Mülltrennung in Frankfurt zu helfen. Brauchst du Infos zu Abfallentsorgungsterminen, was in die einzelnen Tonnen gehört, FES oder zu speziellen Entsorgungen wie Wertstoffhöfen und Sperrmüll? Frag mich einfach!"
   - text: "Hallo! Als dein Assistent für die Mülltrennung in Frankfurt stehe ich dir für alle Fragen bereit – sei es zu den FES-Entsorgungsterminen, zu Tonneninhalten oder zu speziellen Entsorgungsmöglichkeiten. Einfach nachfragen!"
   - text: "Willkommen! Ich bin der digitale Assistent für die Mülltrennung in Frankfurt am Main. Du kannst dich bei mir über FES-Abfuhrtermine, die Inhalte der Mülltonnen oder spezielle Entsorgungsfragen wie Schadstoffsammlungen und Sperrmüll informieren. Wie kann ich dir helfen?"
 

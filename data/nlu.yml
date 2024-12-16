@@ -110,6 +110,7 @@ nlu:
 
 - intent: fes_standort
   examples: |
+    - Wo ist die [FES](unternehmen)?
     - Welche [Standorte](standort) hat die [FES](unternehmen)?
     - Wie komme ich zur [FES](unternehmen) in Frankfurt?
     - Was ist die [Adresse](standort) der [FES](unternehmen)?
@@ -125,6 +126,7 @@ nlu:
 - intent: abfallentsorgung_wertstoffhof
   examples: |
     - Wie funktioniert die Entsorgung im [Wertstoffhof](abfallart)?
+    - Was kann ich beim [Wertstoffhof] entsorgen?
     - Welche [Wertstoffhöfe](abfallart) gibt es in Frankfurt?
     - Wann ist der [Wertstoffhof](abfallart) geöffnet?
     - Wo ist der [Wertstoffhof](abfallart) in Frankfurt?
@@ -133,7 +135,7 @@ nlu:
 - intent: mülltrennung_abfallart
   examples: |
     - Was gehört in den [Restmüll](abfallart:restmüll)?
-    - Welche Abfälle kommen in die [graue Tonne](abfallart:restmüll)? 
+    - Welche Abfälle kommen in die [braune Tonne](abfallart:biomüll)? 
     - Was kommt in die [Biotonne](abfallart:biomüll)?
     - Welche Abfälle gehören in den [Biomüll](abfallart:biomüll)?
     - Was gehört in die [Altpapiertonne](abfallart:altpapier)?
