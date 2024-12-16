@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
 
 # Install Rasa separately
 RUN python -m pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir rasa==3.5.0
+    && pip install --no-cache-dir rasa==3.6.20
 
 # Copy requirements.txt into the container
 COPY requirements.txt /app/
