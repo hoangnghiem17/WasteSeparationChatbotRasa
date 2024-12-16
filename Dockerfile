@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Rasa separately
+# Install Rasa explicitly
 RUN python -m pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir rasa==3.6.20
 
@@ -32,8 +32,8 @@ COPY . /app/
 # Copy the start_services.sh script into the container
 COPY start_services.sh /app/start_services.sh
 
-# Make the script executable
-RUN chmod +x /app/start_services.sh && chown root:root /app/start_services.sh
+# Ensure the script is executable
+RUN chmod +x /app/start_services.sh
 
 # Use the script as the container's default command
 CMD ["/app/start_services.sh"]
