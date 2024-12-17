@@ -27,7 +27,7 @@ COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Install the German language model for spaCy
-RUN python -m spacy download de_core_news_sm
+RUN python -m spacy download de_core_news_md
 
 # Copy the entire Rasa application into the container
 COPY . /app/
