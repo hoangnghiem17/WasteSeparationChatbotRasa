@@ -11,3 +11,4 @@ rasa run actions --port 5055 &
 # Start the Flask application
 echo "Starting Flask application..."
 python /app/rasa_app/app.py
+

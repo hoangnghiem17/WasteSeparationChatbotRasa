@@ -29,6 +29,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the entire Rasa application into the container
 COPY . /app/
 
+# Copy the trained Rasa model
+COPY models/ /app/models/
+
 # Copy the start_services.sh script into the container
 COPY start_services.sh /app/start_services.sh
 
