@@ -6,7 +6,7 @@ rasa run --enable-api --cors "*" --port $PORT &
 
 # Start the Rasa Action server on port 5055
 echo "Starting Rasa Action server..."
-rasa run actions --port 5055
+rasa run actions --port 5055 &
 
 # Start the Flask application
 echo "Starting Flask application..."
