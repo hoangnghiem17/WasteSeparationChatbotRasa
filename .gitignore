@@ -1,4 +1,9 @@
 .rasa
-#models
+models
 actions/__pycache__
 venv
+Dockerfile
+heroku.yml
+Procfile
+runtime.txt
+start_services.s

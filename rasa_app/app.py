@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %
 app = Flask(__name__)
 
 # Rasa server URL
-RASA_URL = "http://localhost:5005/webhooks/rest/webhook"
+RASA_URL = "http://127.0.0.1:5005/webhooks/rest/webhook"
 
 # Serves at chat interface
 @app.route('/')
@@ -41,6 +41,8 @@ def chat():
 
 if __name__ == '__main__':
     logging.debug("Starting Flask application...")
-    port = int(os.environ.get("PORT", 8000))
-    app.run(host="0.0.0.0", port=port)
-    #app.run(port=8000, debug=True) # local deployment
+    # Local deployment
+    app.run(port=8000, debug=True)
+    # Settings for Heroku deployment
+    #port = int(os.environ.get("PORT", 8000))
+    #app.run(host="0.0.0.0", port=port)
