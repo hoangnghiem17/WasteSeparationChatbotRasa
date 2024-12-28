@@ -22,6 +22,13 @@ def index():
 @app.route('/chat', methods=['POST'])
 def chat():
     user_message = request.json.get('message')
+    sender_id = request.json.get("sender") # Unique ID per user
+    
+    response = requests.post(
+        RASA_URL,
+        json={"sender": sender_id, "message": user_message}
+    )
+    
     if not user_message:
         logging.warning("No message provided in user request.")
         return jsonify({"error": "No message provided"}), 400
